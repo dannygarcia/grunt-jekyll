@@ -1,7 +1,7 @@
-module.exports = function( grunt ) {
+module.exports = function (grunt) {
 
 	// Create a new multi task.
-	grunt.registerMultiTask( 'jekyll', 'This triggers the `jekyll` command.', function() {
+	grunt.registerMultiTask('jekyll', 'This triggers the `jekyll` command.', function () {
 
 		// Tell grunt this task is asynchronous.
 		var done = this.async(),
@@ -40,19 +40,19 @@ module.exports = function( grunt ) {
 			environment = this.data.environment;
 			*/
 
-		if (typeof this.data.src !== 'undefined' ) {
+		if (typeof this.data.src !== 'undefined') {
 			src = grunt.template.process(this.data.src);
 		}
 
-		if (typeof this.data.dest !== 'undefined' ) {
+		if (typeof this.data.dest !== 'undefined') {
 			dest = grunt.template.process(this.data.dest);
 		}
 
-		if ( bundleExec ) {
+		if (typeof  bundleExec !== 'undefined') {
 			command = 'bundle exec ' + command;
 		}
 
-		if (typeof src !== 'undefined' && typeof dest !== 'undefined' ) {
+		if (typeof src !== 'undefined' && typeof dest !== 'undefined') {
 			command += ' "' + src + '" "' + dest + '"';
 		}
 
@@ -159,13 +159,13 @@ module.exports = function( grunt ) {
 		}
 		*/
 
-		function puts( error, stdout, stderr ) {
+		function puts(error, stdout, stderr) {
 
-			grunt.log.write( '\n\njekyll output:\n' );
-			grunt.log.write( stdout );
+			grunt.log.write('\n\njekyll output:\n');
+			grunt.log.write(stdout);
 
-			if ( error !== null ) {
-				grunt.log.error( error );
+			if (error !== null) {
+				grunt.log.error(error);
 				done(false);
 			}
 			else {
@@ -173,7 +173,7 @@ module.exports = function( grunt ) {
 			}
 		}
 
-		exec( command, puts );
-		grunt.log.write( '`' + command + '` was initiated.' );
+		exec(command, puts);
+		grunt.log.write('`' + command + '` was initiated.');
 	});
 };
