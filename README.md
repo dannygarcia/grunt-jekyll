@@ -139,6 +139,8 @@ jekyll: {
 
 # Changelog
 
+v0.1.6: Updated README with better example.
+
 v0.1.0: Initial Release.
 
 ----
