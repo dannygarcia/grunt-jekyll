@@ -42,7 +42,7 @@ All the configuration options are
 	<tr>
 		<td><pre>dest</pre></td>
 		<td><pre>[path]</pre></td>
-		<td><pre>"."</pre></td>
+		<td><pre>"./site"</pre></td>
 		<td>Destination Path</td>
 	</tr>
 	<tr>
@@ -127,6 +127,8 @@ All the configuration options are
 
 
 ## Changelog
+
+v0.2.1: Fixed destination path option.
 
 v0.2.0: Updated README with better options. Options are more flexible.
 

@@ -29,15 +29,15 @@ module.exports = function (grunt) {
 			};
 
 		if (opt.src) {
-			opt.src = grunt.template.process(this.data.src);
+			opt.src = grunt.template.process(opt.src);
 		} else {
 			opt.src = '.';
 		}
 
-		if (opt.src) {
-			opt.dest = grunt.template.process(this.data.dest);
+		if (opt.dest) {
+			opt.dest = grunt.template.process(opt.dest);
 		} else {
-			opt.src = '.';
+			opt.dest = './_site';
 		}
 
 		if (opt.bundleExec) {
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 		}
 
 		if (opt.src && opt.dest) {
-			command += ' "' + src + '" "' + dest + '"';
+			command += ' "' + opt.src + '" "' + opt.dest + '"';
 		}
 
 		if (opt.safe) {
