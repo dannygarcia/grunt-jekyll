@@ -11,6 +11,7 @@ module.exports = function (grunt) {
 			src,
 			dest,
 
+			// Defaults
 			safe = this.data.safe,
 			auto = this.data.auto,
 			server = this.data.server,
@@ -25,27 +26,17 @@ module.exports = function (grunt) {
 			paginate = this.data.paginate,
 			limit_posts = this.data.limit_posts;
 
-			/*
-			// old busted
-			config = this.data.config,
-			images = this.data.images,
-			fonts = this.data.fonts,
-			outputstyle = this.data.outputstyle,
-			linecomments = this.data.linecomments,
-			forcecompile = this.data.forcecompile,
-			debugsass = this.data.debugsass,
-			relativeassets = this.data.relativeassets,
-			libRequire = this.data.require,
-			bundleExec = this.data.bundleExec;
-			environment = this.data.environment;
-			*/
-
+		// Set settings.
 		if (typeof this.data.src !== 'undefined') {
 			src = grunt.template.process(this.data.src);
+		} else {
+			src = '.';
 		}
 
 		if (typeof this.data.dest !== 'undefined') {
 			dest = grunt.template.process(this.data.dest);
+		} else {
+			src = '.';
 		}
 
 		if (typeof  bundleExec !== 'undefined') {
@@ -110,54 +101,6 @@ module.exports = function (grunt) {
 		if (typeof limit_posts !== 'undefined') {
 			command += ' --limit_posts=' + limit_posts;
 		}
-
-		/*
-		// old busted
-
-		if ( config !== undefined ) {
-			command += ' --config="' + config + '"';
-		}
-
-		if ( images !== undefined ) {
-			command += ' --images-dir="' + images + '"';
-		}
-
-		if ( fonts !== undefined ) {
-			command += ' --fonts-dir="' + fonts + '"';
-		}
-
-		if ( debugsass !== undefined ) {
-			if ( debugsass === true ) {
-				command += ' --debug-info';
-			}
-		}
-
-		if ( relativeassets !== undefined ) {
-			if ( relativeassets === true ) {
-				command += ' --relative-assets';
-			}
-		}
-
-		if ( outputstyle !== undefined ) {
-			command += ' --output-style ' + outputstyle;
-		}
-
-		if ( linecomments === false ) {
-			command += ' --no-line-comments';
-		}
-
-		if ( libRequire !== undefined ) {
-			command += ' --require '+ libRequire;
-		}
-
-		if ( forcecompile === true ) {
-			command += ' --force';
-		}
-
-		if ( environment !== undefined ) {
-			command += ' -e ' + environment;
-		}
-		*/
 
 		function puts(error, stdout, stderr) {
 
