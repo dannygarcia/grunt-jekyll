@@ -8,110 +8,114 @@ module.exports = function (grunt) {
 			exec = require('child_process').exec,
 			command = "jekyll",
 
-			src,
-			dest,
+			// User input options.
+			opt = {
+				src : this.data.src,
+				dest : this.data.dest,
+				bundleExec : this.data.bundleExec,
+				safe : this.data.safe,
+				auto : this.data.auto,
+				server : this.data.server,
+				server_port : this.data.server_port,
+				baseurl : this.data.baseurl,
+				url : this.data.url,
+				markdown : this.data.markdown,
+				pygments : this.data.pygments,
+				future : this.data.future,
+				lsi : this.data.lsi,
+				permalink : this.data.permalink,
+				paginate : this.data.paginate,
+				limit_posts : this.data.limit_posts
+			};
 
-			// Defaults
-			safe = this.data.safe,
-			auto = this.data.auto,
-			server = this.data.server,
-			server_port = this.data.server_port,
-			baseurl = this.data.baseurl,
-			url = this.data.url,
-			markdown = this.data.markdown,
-			pygments = this.data.pygments,
-			future = this.data.future,
-			lsi = this.data.lsi,
-			permalink = this.data.permalink,
-			paginate = this.data.paginate,
-			limit_posts = this.data.limit_posts;
-
-		// Set settings.
-		if (typeof this.data.src !== 'undefined') {
-			src = grunt.template.process(this.data.src);
+		if (opt.src) {
+			opt.src = grunt.template.process(this.data.src);
 		} else {
-			src = '.';
+			opt.src = '.';
 		}
 
-		if (typeof this.data.dest !== 'undefined') {
-			dest = grunt.template.process(this.data.dest);
+		if (opt.src) {
+			opt.dest = grunt.template.process(this.data.dest);
 		} else {
-			src = '.';
+			opt.src = '.';
 		}
 
-		if (typeof  bundleExec !== 'undefined') {
+		if (opt.bundleExec) {
 			command = 'bundle exec ' + command;
 		}
 
-		if (typeof src !== 'undefined' && typeof dest !== 'undefined') {
+		if (opt.src && opt.dest) {
 			command += ' "' + src + '" "' + dest + '"';
 		}
 
-		if (typeof safe !== 'undefined') {
+		if (opt.safe) {
 			command += ' --safe';
 		}
 
-		if (typeof auto !== 'undefined') {
+		if (opt.auto) {
 			command += ' --auto';
+		} else {
+			command += ' --no-auto';
 		}
 
-		if (typeof server !== 'undefined') {
+		if (opt.server) {
 			command += ' --server';
 
-			if (typeof server_port !== 'undefined') {
-				command += ' ' + server_port;
+			if (opt.server_port) {
+				command += ' ' + opt.server_port;
 			}
 
-		} else if (typeof server_port !== 'undefined') {
-			command += ' --server ' + server_port;
+		} else if (opt.server_port) {
+			command += ' --server ' + opt.server_port;
 		}
 
-		if (typeof baseurl !== 'undefined') {
-			command += ' --base-url ' + baseurl;
+		if (opt.baseurl) {
+			command += ' --base-url ' + opt.baseurl;
 		}
 
-		if (typeof url !== 'undefined') {
-			command += ' --url ' + url;
+		if (opt.url) {
+			command += ' --url ' + opt.url;
 		}
 
-		if (typeof markdown !== 'undefined') {
-			command += ' --' + markdown;
+		if (opt.markdown) {
+			command += ' --' + opt.markdown;
 		}
 
-		if (typeof pygments !== 'undefined') {
+		if (opt.pygments) {
 			command += ' --pygments';
 		}
 
-		if (typeof future !== 'undefined') {
+		if (opt.future) {
 			command += ' --future';
+		} else {
+			command += ' --no-future';
 		}
 
-		if (typeof lsi !== 'undefined') {
+		if (opt.lsi) {
 			command += ' --lsi';
 		}
 
-		if (typeof permalink !== 'undefined') {
-			command += ' --permalink=' + permalink;
+		if (opt.permalink) {
+			command += ' --permalink=' + opt.permalink;
 		}
 
-		if (typeof paginate !== 'undefined') {
-			command += ' --paginate ' + paginate;
+		if (opt.paginate) {
+			command += ' --paginate ' + opt.paginate;
 		}
 
-		if (typeof limit_posts !== 'undefined') {
-			command += ' --limit_posts=' + limit_posts;
+		if (opt.limit_posts) {
+			command += ' --limit_posts=' + opt.limit_posts;
 		}
 
 		function puts(error, stdout, stderr) {
 
-			grunt.log.write('\n\njekyll output:\n');
+			grunt.log.write('\n\nJekyll output:\n');
 			grunt.log.write(stdout);
 
 			if (error !== null) {
 				grunt.log.error(error);
 				done(false);
-			}
-			else {
+			} else {
 				done(true);
 			}
 		}

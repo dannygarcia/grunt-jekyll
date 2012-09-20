@@ -1,9 +1,6 @@
-grunt-jekyll
-============
+# grunt-jekyll
 
-Simple grunt Jekyll task. The code base is inspred by [grunt-compass](https://github.com/kahlil/grunt-compass).
-
-This means its use is similar but is outlined in detail here.
+Straightforward grunt.js Jekyll plugin. The code base is inspred by [grunt-compass](https://github.com/kahlil/grunt-compass). This means its use is similar but outlined in detail here.
 
 ## Dependencies
 
@@ -11,139 +8,132 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
 ## Quick Start
 
-Follow [this grunt.js example](https://gist.github.com/3753650) to get started with grunt-jekyll right away!
+Follow [this grunt.js example](https://gist.github.com/3753650) to get started with grunt-jekyll right away.
 
 ## Installation & Options
 
-All the configuration options are on the [Jekyll Wiki](https://github.com/mojombo/jekyll/wiki/configuration).
+### Installation
 
-1. Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-jekyll`.
-2. Call `grunt.loadNpmTasks('grunt-jekyll')` in your gruntfile.
-3. Configure `grunt jekyll` to watch your html files and call the task(s).
-	e.g.:
+Install this grunt plugin next to your project's grunt.js gruntfile with:
+	
+	npm install grunt-jekyll
 
-	```javascript
-	watch: {
-		files: ['templates/*.html'],
-		tasks: ['jekyll:dev', 'jekyll:prod']
-	}
-	```
+### Configuration Options
 
-4. Setup your HTML paths
+All the configuration options are
 
-	```javascript
-	src: 'templates/',
-	dest: 'dist/'
-	```
+ * on the [Jekyll Wiki](https://github.com/mojombo/jekyll/wiki/configuration).
+ * optional
+ *  explained here within the `grunt.js` task object context:
 
-	`src` is the folder with your html templates and `dest` is the folder where the compiled files will be placed.
+<table>
+	<tr>
+		<th>Object Property</th>
+		<th>Type</th>
+		<th>Default Value</th>
+		<th>Notes</th>
+	</tr>
+	<tr>
+		<td><pre>src</pre></td>
+		<td><pre>[path]</pre></td>
+		<td><pre>"."</pre></td>
+		<td>Source Path</td>
+	</tr>
+	<tr>
+		<td><pre>dest</pre></td>
+		<td><pre>[path]</pre></td>
+		<td><pre>"."</pre></td>
+		<td>Destination Path</td>
+	</tr>
+	<tr>
+		<td><pre>safe</pre></td>
+		<td><pre>[bool]</pre></td>
+		<td><pre>false</pre></td>
+		<td>Disables custom plugins.</td>
+	</tr>
+	<tr>
+		<td><pre>auto</pre></td>
+		<td><pre>[bool]</pre></td>
+		<td><pre>false</pre></td>
+		<td>Jekyll watches src path for changes.</td>
+	</tr>
+	<tr>
+		<td><pre>server</pre></td>
+		<td><pre>[bool]</pre></td>
+		<td><pre>false</pre></td>
+		<td>Jekyll Server</td>
+	</tr>
+	<tr>
+		<td><pre>server_port</pre></td>
+		<td><pre>[int]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Server Port</td>
+	</tr>
+	<tr>
+		<td><pre>baseurl</pre></td>
+		<td><pre>[url]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Serve from URL</td>
+	</tr>
+	<tr>
+		<td><pre>url</pre></td>
+		<td><pre>[url]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Sets site.url</td>
+	</tr>
+	<tr>
+		<td><pre>markdown</pre></td>
+		<td><pre>[engine]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Markdown Engine</td>
+	</tr>
+	<tr>
+		<td><pre>pygments</pre></td>
+		<td><pre>[bool]</pre></td>
+		<td><pre>false</pre></td>
+		<td>Syntax Highlighting</td>
+	</tr>
+	<tr>
+		<td><pre>future</pre></td>
+		<td><pre>[bool]</pre></td>
+		<td><pre>false</pre></td>
+		<td>Publish Future Posts</td>
+	</tr>
+	<tr>
+		<td><pre>lsi</pre></td>
+		<td><pre>[bool]</pre></td>
+		<td><pre>false</pre></td>
+		<td>Related Posts Index</td>
+	</tr>
+	<tr>
+		<td><pre>permalink</pre></td>
+		<td><pre>[style]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Permalink Style</td>
+	</tr>
+	<tr>
+		<td><pre>paginate</pre></td>
+		<td><pre>[int]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Per-page Pagination</td>
+	</tr>
+	<tr>
+		<td><pre>limit_posts</pre></td>
+		<td><pre>[int]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Max Posts</td>
+	</tr>
+</table>
 
-5. Disable custom plugins like this:
 
-	```javascript
-	safe: 'false'
-	```
-6. Watch for file chnages like this:
+## Changelog
 
-	```javascript
-	auto: true
-	```
-7. Start the Jekyll server:
-
-	```javascript
-	server: true
-	```
-8. Set the server port:
-
-	```javascript
-	server_port: 8000
-	```
-
-9. Server website from a given url:
-
-	```javascript
-	baseurl: 'http://example.com'
-	```
-
-10. Sets site.url, useful for environment switching:
-
-	```javascript
-	url: 'http://other-url.com'
-	```
-
-11. Customize engine type
-
-	```javascript
-	markdown: 'maruku'
-	```
-
-12. Enables highlight tag with Pygments:
-
-	```javascript
-	pygments: true
-	```
-
-13. Publishes posts with a future date:
-
-	```javascript
-	future: true
-	```
-
-14. Produces an index for related posts:
-
-	```javascript
-	lsi: true
-	```
-
-15. Controls the URLs that posts are generated with:
-
-	```javascript
-	permalink: 'pretty'
-	```	
-
-16. Per-page pagination value:
-
-	```javascript
-	paginate: 10
-	```	
-
-17. Limits the number of posts to parse and publish:
-
-	```javascript
-	limit_posts: 30
-	```	
-
-18. Run "grunt watch" and make cool stuff!
-
-# An Example Setup
-
-```javascript
-jekyll: {
-	dev: {
-		src : 'templates/',
-		dest : 'dev/',
-		server_port : 3333,
-		future : true,
-		permalink : 'pretty',
-		paginate : 20
-	},
-	prod: {
-		src : 'templates/',
-		dest : 'prod/',
-		server_port : 8000,
-		permalink : 'pretty',
-		paginate : 10
-	}
-}
-```
-
-# Changelog
+v0.2.0: Updated README with better options. Options are more flexible.
 
 v0.1.6: Updated README with better example.
 
 v0.1.0: Initial Release.
 
-----
 
 ## MIT License
 
