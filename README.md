@@ -20,7 +20,7 @@ All the configuration options are on the [Jekyll Wiki](https://github.com/mojomb
 
 	```javascript
 	watch: {
-	    files: ['templates/**\/*.html'],
+	    files: ['templates/*.html'],
 	    tasks: ['jekyll:dev', 'jekyll:prod']
 	}
 	```
