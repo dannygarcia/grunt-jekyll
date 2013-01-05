@@ -30,14 +30,10 @@ module.exports = function (grunt) {
 
 		if (opt.src) {
 			opt.src = grunt.template.process(opt.src);
-		} else {
-			opt.src = '.';
 		}
 
 		if (opt.dest) {
 			opt.dest = grunt.template.process(opt.dest);
-		} else {
-			opt.dest = './_site';
 		}
 
 		if (opt.bundleExec) {
@@ -54,8 +50,6 @@ module.exports = function (grunt) {
 
 		if (opt.auto) {
 			command += ' --auto';
-		} else {
-			command += ' --no-auto';
 		}
 
 		if (opt.server) {
@@ -87,8 +81,6 @@ module.exports = function (grunt) {
 
 		if (opt.future) {
 			command += ' --future';
-		} else {
-			command += ' --no-future';
 		}
 
 		if (opt.lsi) {
