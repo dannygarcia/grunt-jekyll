@@ -52,7 +52,7 @@ All the configuration options are
 		<td>Disables custom plugins.</td>
 	</tr>
 	<tr>
-		<td><pre>auto</pre></td>
+		<td><pre>watch</pre></td>
 		<td><pre>[bool]</pre></td>
 		<td><pre>false</pre></td>
 		<td>Jekyll watches src path for changes.</td>
