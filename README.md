@@ -6,6 +6,8 @@ Straightforward grunt.js Jekyll plugin. The code base is inspred by [grunt-compa
 
 You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/cowboy/grunt), [Ruby](http://www.ruby-lang.org/) and [Jekyll](https://github.com/mojombo/jekyll/) installed for this to work.
 
+This task works only with Jekyll 1.0. Please use versions prior to 0.3 for Jekyll prior to the 1.0 release - simply specify this version in your `package.json`.
+
 ## Quick Start
 
 Follow [this grunt.js example](https://gist.github.com/3753650) to get started with grunt-jekyll right away.
