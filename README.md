@@ -130,6 +130,8 @@ All the configuration options are
 
 ## Changelog
 
+v0.3.0: Update for Jekyll 1.0
+
 v0.2.1: Fixed destination path option.
 
 v0.2.0: Updated README with better options. Options are more flexible.
