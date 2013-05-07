@@ -25,8 +25,22 @@ module.exports = function (grunt) {
 				lsi : this.data.lsi,
 				permalink : this.data.permalink,
 				paginate : this.data.paginate,
-				limit_posts : this.data.limit_posts
+				limit_posts : this.data.limit_posts,
+				watch : this.data.watch
 			};
+
+		if (opt.server) {
+			command += ' serve';
+
+			if (opt.server_port) {
+				command += ' --port ' + opt.server_port;
+			}
+			console.log(command);
+		} else if (opt.server_port) {
+			command += ' serve --port ' + opt.server_port;
+		} else {
+			command += ' build';
+		}
 
 		if (opt.src) {
 			opt.src = grunt.template.process(opt.src);
@@ -48,19 +62,8 @@ module.exports = function (grunt) {
 			command += ' --safe';
 		}
 
-		if (opt.auto) {
-			command += ' --auto';
-		}
-
-		if (opt.server) {
-			command += ' --server';
-
-			if (opt.server_port) {
-				command += ' ' + opt.server_port;
-			}
-
-		} else if (opt.server_port) {
-			command += ' --server ' + opt.server_port;
+		if (opt.auto || opt.watch) {
+			command += ' --watch';
 		}
 
 		if (opt.baseurl) {
@@ -96,7 +99,7 @@ module.exports = function (grunt) {
 		}
 
 		if (opt.limit_posts) {
-			command += ' --limit_posts=' + opt.limit_posts;
+			command += ' --limit_posts ' + opt.limit_posts;
 		}
 
 		function puts(error, stdout, stderr) {
