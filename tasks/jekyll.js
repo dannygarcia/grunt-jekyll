@@ -53,14 +53,16 @@ module.exports = function (grunt) {
 		}
 
 		if (opt.server) {
-			command += ' --server';
+			command += ' serve';
 
 			if (opt.server_port) {
-				command += ' ' + opt.server_port;
+				command += ' --port ' + opt.server_port;
 			}
 
 		} else if (opt.server_port) {
-			command += ' --server ' + opt.server_port;
+			command += ' serve --port ' + opt.server_port;
+		} else {
+			command += ' build';
 		}
 
 		if (opt.baseurl) {
