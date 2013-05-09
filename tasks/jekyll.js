@@ -26,7 +26,8 @@ module.exports = function (grunt) {
 				permalink : this.data.permalink,
 				paginate : this.data.paginate,
 				limit_posts : this.data.limit_posts,
-				watch : this.data.watch
+				watch : this.data.watch,
+				config : this.data.config
 			};
 
 		if (opt.server) {
@@ -100,6 +101,10 @@ module.exports = function (grunt) {
 
 		if (opt.limit_posts) {
 			command += ' --limit_posts ' + opt.limit_posts;
+		}
+
+		if (opt.config) {
+			command += ' --config ' + opt.config;
 		}
 
 		function puts(error, stdout, stderr) {
