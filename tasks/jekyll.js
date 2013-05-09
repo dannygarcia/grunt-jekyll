@@ -105,7 +105,6 @@ module.exports = function (grunt) {
 
 		if (opt.config) {
 			command += ' --config ' + opt.config;
-			grunt.log.write(opt.config);
 		}
 
 		function puts(error, stdout, stderr) {
