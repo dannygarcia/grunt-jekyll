@@ -42,24 +42,16 @@ module.exports = function (grunt) {
 			command += ' build';
 		}
 
-		if (opt.src) {
-			opt.src = grunt.template.process(opt.src);
-		}
-
-		if (opt.dest) {
-			opt.dest = grunt.template.process(opt.dest);
-		}
-
 		if (opt.bundleExec) {
 			command = 'bundle exec ' + command;
 		}
 
 		if (opt.src) {
-			command += ' --source ' + opt.src;
+			command += ' --source ' + grunt.template.process(opt.src);
 		}
 
 		if (opt.dest) {
-			command += ' --destination ' + opt.dest;
+			command += ' --destination ' + grunt.template.process(opt.dest);
 		}
 
 		if (opt.safe) {
