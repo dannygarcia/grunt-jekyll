@@ -90,12 +90,6 @@ All the configuration options are
 		<td>Markdown Engine</td>
 	</tr>
 	<tr>
-		<td><pre>pygments</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Syntax Highlighting</td>
-	</tr>
-	<tr>
 		<td><pre>future</pre></td>
 		<td><pre>[bool]</pre></td>
 		<td><pre>false</pre></td>
@@ -124,6 +118,12 @@ All the configuration options are
 		<td><pre>[int]</pre></td>
 		<td><pre>undefined</pre></td>
 		<td>Max Posts</td>
+	</tr>
+	<tr>
+		<td><pre>config</pre></td>
+		<td><pre>[path]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Specify a config file. Overrides settings in `_config.yml`</td>
 	</tr>
 </table>
 
