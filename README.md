@@ -17,7 +17,7 @@ Follow [this grunt.js example](https://gist.github.com/3753650) to get started w
 ### Installation
 
 Install this grunt plugin next to your project's grunt.js gruntfile with:
-	
+
 	npm install grunt-jekyll
 
 ### Configuration Options
@@ -129,6 +129,8 @@ All the configuration options are
 
 
 ## Changelog
+
+v0.3.2: Added ability option to select config file. Removed deprecated --pygments option flag.
 
 v0.3.0: Update for Jekyll 1.0
 
