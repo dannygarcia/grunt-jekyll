@@ -128,7 +128,17 @@ All the configuration options are
 </table>
 
 
+## To-do
+
+ - Review Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and update task with new flags.
+ - Review and remove deprecated flags.
+ - Update documentation to match flag updates. (Rewrite as a list)
+ - Provide in-line code examples to this readme.
+
+
 ## Changelog
+
+v0.3.3: Updated link in documentation. Added to-do list.
 
 v0.3.2: Added option to select config file. Removed deprecated --pygments option flag. Bugfixes.
 
