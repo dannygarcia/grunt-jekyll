@@ -24,9 +24,9 @@ Install this grunt plugin next to your project's grunt.js gruntfile with:
 
 All the configuration options are
 
- * on the [Jekyll Wiki](https://github.com/mojombo/jekyll/wiki/configuration).
+ * on the [Jekyll Wiki](http://jekyllrb.com/docs/configuration/).
  * optional
- *  explained here within the `grunt.js` task object context:
+ * explained here within the `grunt.js` task object context:
 
 <table>
 	<tr>
@@ -44,7 +44,7 @@ All the configuration options are
 	<tr>
 		<td><pre>dest</pre></td>
 		<td><pre>[path]</pre></td>
-		<td><pre>"./site"</pre></td>
+		<td><pre>"./_site"</pre></td>
 		<td>Destination Path</td>
 	</tr>
 	<tr>
@@ -54,27 +54,15 @@ All the configuration options are
 		<td>Disables custom plugins.</td>
 	</tr>
 	<tr>
-		<td><pre>watch</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Jekyll watches src path for changes.</td>
-	</tr>
-	<tr>
-		<td><pre>server</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Jekyll Server</td>
-	</tr>
-	<tr>
-		<td><pre>server_port</pre></td>
+		<td><pre>port</pre></td>
 		<td><pre>[int]</pre></td>
-		<td><pre>undefined</pre></td>
+		<td><pre>4000</pre></td>
 		<td>Server Port</td>
 	</tr>
 	<tr>
 		<td><pre>baseurl</pre></td>
 		<td><pre>[url]</pre></td>
-		<td><pre>undefined</pre></td>
+		<td><pre>/</pre></td>
 		<td>Serve from URL</td>
 	</tr>
 	<tr>
@@ -120,10 +108,10 @@ All the configuration options are
 		<td>Max Posts</td>
 	</tr>
 	<tr>
-		<td><pre>config</pre></td>
+		<td><pre>--config</pre></td>
 		<td><pre>[path]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Specify a config file. Overrides settings in `_config.yml`</td>
+		<td><pre>_config.yml</pre></td>
+		<td>Specify a config file(s). Override default settings.</td>
 	</tr>
 </table>
 
