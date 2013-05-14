@@ -130,7 +130,7 @@ All the configuration options are
 
 ## Changelog
 
-v0.3.2: Added ability option to select config file. Removed deprecated --pygments option flag.
+v0.3.2: Added option to select config file. Removed deprecated --pygments option flag. Bugfixes.
 
 v0.3.0: Update for Jekyll 1.0
 

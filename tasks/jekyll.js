@@ -54,8 +54,12 @@ module.exports = function (grunt) {
 			command = 'bundle exec ' + command;
 		}
 
-		if (opt.src && opt.dest) {
-			command += ' "' + opt.src + '" "' + opt.dest + '"';
+		if (opt.src) {
+			command += ' --source ' + opt.src;
+		}
+
+		if (opt.dest) {
+			command += ' --destination ' + opt.dest;
 		}
 
 		if (opt.safe) {
