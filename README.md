@@ -24,7 +24,7 @@ Install this grunt plugin next to your project's grunt.js gruntfile with:
 
 All the configuration options are
 
- * on the [Jekyll Wiki](https://github.com/mojombo/jekyll/wiki/configuration).
+ * on the [Jekyll Wiki](http://jekyllrb.com/docs/configuration/).
  * optional
  *  explained here within the `grunt.js` task object context:
 
