@@ -20,7 +20,6 @@ module.exports = function (grunt) {
 				baseurl : this.data.baseurl,
 				url : this.data.url,
 				markdown : this.data.markdown,
-				pygments : this.data.pygments,
 				future : this.data.future,
 				lsi : this.data.lsi,
 				permalink : this.data.permalink,
@@ -43,20 +42,16 @@ module.exports = function (grunt) {
 			command += ' build';
 		}
 
-		if (opt.src) {
-			opt.src = grunt.template.process(opt.src);
-		}
-
-		if (opt.dest) {
-			opt.dest = grunt.template.process(opt.dest);
-		}
-
 		if (opt.bundleExec) {
 			command = 'bundle exec ' + command;
 		}
 
-		if (opt.src && opt.dest) {
-			command += ' "' + opt.src + '" "' + opt.dest + '"';
+		if (opt.src) {
+			command += ' --source ' + grunt.template.process(opt.src);
+		}
+
+		if (opt.dest) {
+			command += ' --destination ' + grunt.template.process(opt.dest);
 		}
 
 		if (opt.safe) {
@@ -77,10 +72,6 @@ module.exports = function (grunt) {
 
 		if (opt.markdown) {
 			command += ' --' + opt.markdown;
-		}
-
-		if (opt.pygments) {
-			command += ' --pygments';
 		}
 
 		if (opt.future) {

@@ -17,7 +17,7 @@ Follow [this grunt.js example](https://gist.github.com/3753650) to get started w
 ### Installation
 
 Install this grunt plugin next to your project's grunt.js gruntfile with:
-	
+
 	npm install grunt-jekyll
 
 ### Configuration Options
@@ -90,12 +90,6 @@ All the configuration options are
 		<td>Markdown Engine</td>
 	</tr>
 	<tr>
-		<td><pre>pygments</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Syntax Highlighting</td>
-	</tr>
-	<tr>
 		<td><pre>future</pre></td>
 		<td><pre>[bool]</pre></td>
 		<td><pre>false</pre></td>
@@ -125,10 +119,18 @@ All the configuration options are
 		<td><pre>undefined</pre></td>
 		<td>Max Posts</td>
 	</tr>
+	<tr>
+		<td><pre>config</pre></td>
+		<td><pre>[path]</pre></td>
+		<td><pre>undefined</pre></td>
+		<td>Specify a config file. Overrides settings in `_config.yml`</td>
+	</tr>
 </table>
 
 
 ## Changelog
+
+v0.3.2: Added option to select config file. Removed deprecated --pygments option flag. Bugfixes.
 
 v0.3.0: Update for Jekyll 1.0
 
