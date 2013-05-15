@@ -1,12 +1,12 @@
 # grunt-jekyll
 
-Straightforward grunt.js Jekyll plugin. The code base is inspred by [grunt-compass](https://github.com/kahlil/grunt-compass). This means its use is similar but outlined in detail here.
+Straightforward [Jekyll](http://jekyllrb.com/) [Grunt](http://gruntjs.com/) plugin. It basically triggers the `jekyll` cli command with whatever options you set.
 
 ## Dependencies
 
-You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/cowboy/grunt), [Ruby](http://www.ruby-lang.org/) and [Jekyll](https://github.com/mojombo/jekyll/) installed for this to work.
-
-This task works only with Jekyll 1.0.x. Please use grunt-jekyll versions prior to 0.3.0 for Jekyll prior to the 1.0 release - simply specify this version in your `package.json`.
+ * [Node](http://nodejs.org/)
+ * [Grunt](http://gruntjs.com/)
+ * [Jekyll](http://jekyllrb.com/) `>= v1.0.0`
 
 ## Quick Start
 
@@ -16,127 +16,100 @@ Follow [this grunt.js example](https://gist.github.com/3753650) to get started w
 
 ### Installation
 
-Install this grunt plugin next to your project's grunt.js gruntfile with:
+Install this grunt plugin next to your project's `gruntfile.js` with:
 
 	npm install grunt-jekyll
 
+It can just as easily be added to `package.json` under `devDependencies` as `grunt-jekyll`.
+
 ### Configuration Options
 
-All the configuration options are
+All the configuration options are:
 
- * on the [Jekyll Wiki](http://jekyllrb.com/docs/configuration/).
- * optional
- *  explained here within the `grunt.js` task object context:
+ * At the [Jekyll Documentation](http://jekyllrb.com/docs/configuration/).
+ * Optional.
+ * Explained here within the plugin's context:
 
-<table>
-	<tr>
-		<th>Object Property</th>
-		<th>Type</th>
-		<th>Default Value</th>
-		<th>Notes</th>
-	</tr>
-	<tr>
-		<td><pre>src</pre></td>
-		<td><pre>[path]</pre></td>
-		<td><pre>"."</pre></td>
-		<td>Source Path</td>
-	</tr>
-	<tr>
-		<td><pre>dest</pre></td>
-		<td><pre>[path]</pre></td>
-		<td><pre>"./site"</pre></td>
-		<td>Destination Path</td>
-	</tr>
-	<tr>
-		<td><pre>safe</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Disables custom plugins.</td>
-	</tr>
-	<tr>
-		<td><pre>watch</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Jekyll watches src path for changes.</td>
-	</tr>
-	<tr>
-		<td><pre>server</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Jekyll Server</td>
-	</tr>
-	<tr>
-		<td><pre>server_port</pre></td>
-		<td><pre>[int]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Server Port</td>
-	</tr>
-	<tr>
-		<td><pre>baseurl</pre></td>
-		<td><pre>[url]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Serve from URL</td>
-	</tr>
-	<tr>
-		<td><pre>url</pre></td>
-		<td><pre>[url]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Sets site.url</td>
-	</tr>
-	<tr>
-		<td><pre>markdown</pre></td>
-		<td><pre>[engine]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Markdown Engine</td>
-	</tr>
-	<tr>
-		<td><pre>future</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Publish Future Posts</td>
-	</tr>
-	<tr>
-		<td><pre>lsi</pre></td>
-		<td><pre>[bool]</pre></td>
-		<td><pre>false</pre></td>
-		<td>Related Posts Index</td>
-	</tr>
-	<tr>
-		<td><pre>permalink</pre></td>
-		<td><pre>[style]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Permalink Style</td>
-	</tr>
-	<tr>
-		<td><pre>paginate</pre></td>
-		<td><pre>[int]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Per-page Pagination</td>
-	</tr>
-	<tr>
-		<td><pre>limit_posts</pre></td>
-		<td><pre>[int]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Max Posts</td>
-	</tr>
-	<tr>
-		<td><pre>config</pre></td>
-		<td><pre>[path]</pre></td>
-		<td><pre>undefined</pre></td>
-		<td>Specify a config file. Overrides settings in `_config.yml`</td>
-	</tr>
-</table>
+#### server `boolean`
 
+Build with a server (defaults to `false` which just builds).
+
+#### src `string`
+
+Directory where Jekyll will read files.
+
+#### dest `string`
+
+Directory where Jekyll will write files.
+
+#### safe `boolean`
+
+Disables custom plugins.
+
+#### plugins `sring`
+
+Plugins directory (defaults to `./_plugins`).
+
+#### layouts `string`
+
+Layouts directory (defaults to `./_layouts`).
+
+#### watch `boolean`
+
+Enable auto-regeneration of the site when files are modified.
+
+#### auto `boolean`
+
+Alias for `watch`.
+
+#### config `string`
+
+Custom configuration file directory.
+
+#### drafts `boolean`
+
+Process and render draft posts.
+
+#### future `boolean`
+
+Publishes posts with a future date.
+
+#### lsi `boolean`
+
+Produce an index for related posts.
+
+#### limit_posts `number`
+
+Limit the number of posts to parse and publish.
+
+#### port `string or number`
+
+Listen on the given port (requires `server`).
+
+#### server_port `string or number`
+
+Alias for `port`.
+
+#### host `string`
+
+Listen at the given hostname (requires `server`).
+
+#### baseurl `string`
+
+Serve the website from the given base URL (requires `server`).
 
 ## To-do
 
- - Review Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and update task with new flags.
- - Review and remove deprecated flags.
- - Update documentation to match flag updates. (Rewrite as a list)
  - Provide in-line code examples to this readme.
 
 
 ## Changelog
+
+v0.3.5:
+
+ - Reviewed Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and updated plugin with new flags.
+ - Reviewed and warned about deprecated flags.
+ - Updated documentation to match flag updates. (Rewritten as a list)
 
 v0.3.3: Updated link in documentation. Added to-do list.
 

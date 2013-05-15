@@ -1,3 +1,4 @@
+/*global module*/
 module.exports = function (grunt) {
 
 	// Create a new multi task.
@@ -8,102 +9,65 @@ module.exports = function (grunt) {
 			exec = require('child_process').exec,
 			command = "jekyll",
 
-			// User input options.
-			opt = {
-				src : this.data.src,
-				dest : this.data.dest,
-				bundleExec : this.data.bundleExec,
-				safe : this.data.safe,
-				auto : this.data.auto,
-				server : this.data.server,
-				server_port : this.data.server_port,
-				baseurl : this.data.baseurl,
-				url : this.data.url,
-				markdown : this.data.markdown,
-				future : this.data.future,
-				lsi : this.data.lsi,
-				permalink : this.data.permalink,
-				paginate : this.data.paginate,
-				limit_posts : this.data.limit_posts,
-				watch : this.data.watch,
-				config : this.data.config
-			};
+			optionList = [
+				{ name : "src", flag : "--source" },
+				{ name : "dest", flag : "--destination" },
+				{ name : "safe", flag : "--safe" },
+				{ name : "plugins", flag : "--plugins" },
+				{ name : "layouts", flag : "--layouts" },
+				{ name : "watch", flag : "--watch" },
+				{ name : "auto", flag : "--watch" },
+				{ name : "config", flag : "--config" },
+				{ name : "drafts", flag : "--drafts" },
+				{ name : "future", flag : "--future" },
+				{ name : "lsi", flag : "--lsi" },
+				{ name : "limit_posts", flag : "--limit_posts" },
+				{ name : "port", flag : "--port" },
+				{ name : "server_port", flag : "--port" },
+				{ name : "host", flag : "--host" },
+				{ name : "baseurl", flag : "--baseurl" },
 
-		if (opt.server) {
+				// deprecated flags
+				{ name : "paginate", flag : false },
+				{ name : "permalink", flag : false },
+				{ name : "markdown", flag : false },
+				{ name : "url", flag : false }
+			],
+			options = {};
+
+		if (this.data.bundleExec) {
+			command = 'bundle exec ' + command;
+		}
+
+		if (this.data.server) {
 			command += ' serve';
-
-			if (opt.server_port) {
-				command += ' --port ' + opt.server_port;
-			}
-			console.log(command);
-		} else if (opt.server_port) {
-			command += ' serve --port ' + opt.server_port;
 		} else {
 			command += ' build';
 		}
 
-		if (opt.bundleExec) {
-			command = 'bundle exec ' + command;
-		}
+		optionList.forEach(function (option, i) {
 
-		if (opt.src) {
-			command += ' --source ' + grunt.template.process(opt.src);
-		}
+			var userOption = this.data[optionList[i].name];
 
-		if (opt.dest) {
-			command += ' --destination ' + grunt.template.process(opt.dest);
-		}
+			if (userOption) {
+				if (option.flag) {
+					command += ' ' + option.flag;
+					if (typeof userOption !== 'boolean') {
+						command += ' ' + userOption;
+					}
+				} else {
+					grunt.fail.warn('`' + option.name + '` has been deprecated. You may want to try this option in the configuration file.');
+				}
+			}
 
-		if (opt.safe) {
-			command += ' --safe';
-		}
-
-		if (opt.auto || opt.watch) {
-			command += ' --watch';
-		}
-
-		if (opt.baseurl) {
-			command += ' --base-url ' + opt.baseurl;
-		}
-
-		if (opt.url) {
-			command += ' --url ' + opt.url;
-		}
-
-		if (opt.markdown) {
-			command += ' --' + opt.markdown;
-		}
-
-		if (opt.future) {
-			command += ' --future';
-		}
-
-		if (opt.lsi) {
-			command += ' --lsi';
-		}
-
-		if (opt.permalink) {
-			command += ' --permalink=' + opt.permalink;
-		}
-
-		if (opt.paginate) {
-			command += ' --paginate ' + opt.paginate;
-		}
-
-		if (opt.limit_posts) {
-			command += ' --limit_posts ' + opt.limit_posts;
-		}
-
-		if (opt.config) {
-			command += ' --config ' + opt.config;
-		}
+		});
 
 		function puts(error, stdout, stderr) {
 
 			grunt.log.write('\n\nJekyll output:\n');
 			grunt.log.write(stdout);
 
-			if (error !== null) {
+			if (error) {
 				grunt.log.error(error);
 				done(false);
 			} else {
