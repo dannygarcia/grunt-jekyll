@@ -33,13 +33,13 @@ module.exports = function (grunt) {
 				{ name : "markdown", flag : false },
 				{ name : "url", flag : false }
 			],
-			options = {};
+			userData = this.data;
 
-		if (this.data.bundleExec) {
+		if (userData.bundleExec) {
 			command = 'bundle exec ' + command;
 		}
 
-		if (this.data.server) {
+		if (userData.server) {
 			command += ' serve';
 		} else {
 			command += ' build';
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 
 		optionList.forEach(function (option, i) {
 
-			var userOption = this.data[optionList[i].name];
+			var userOption = userData[optionList[i].name];
 
 			if (userOption) {
 				if (option.flag) {
@@ -56,7 +56,7 @@ module.exports = function (grunt) {
 						command += ' ' + userOption;
 					}
 				} else {
-					grunt.fail.warn('`' + option.name + '` has been deprecated. You may want to try this option in the configuration file.');
+					grunt.warn('`' + option.name + '` has been deprecated. You may want to try this option in the configuration file.');
 				}
 			}
 
