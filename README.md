@@ -105,7 +105,7 @@ Serve the website from the given base URL (requires `server`).
 
 ## Changelog
 
-v0.3.5:
+v0.3.6:
 
  - Reviewed Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and updated plugin with new flags.
  - Reviewed and warned about deprecated flags.
