@@ -33,13 +33,15 @@ module.exports = function (grunt) {
 				{ name : "markdown", flag : false },
 				{ name : "url", flag : false }
 			],
-			userData = this.data;
 
-		if (userData.bundleExec) {
+      // Support 'options' and bare style configuration
+      options = Object.keys(this.options()).length ? this.options() : this.data;
+
+		if (options.bundleExec) {
 			command = 'bundle exec ' + command;
 		}
 
-		if (userData.server) {
+		if (options.server) {
 			command += ' serve';
 		} else {
 			command += ' build';
@@ -47,7 +49,7 @@ module.exports = function (grunt) {
 
 		optionList.forEach(function (option, i) {
 
-			var userOption = userData[optionList[i].name];
+			var userOption = options[optionList[i].name];
 
 			if (userOption) {
 				if (option.flag) {
