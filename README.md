@@ -98,6 +98,10 @@ Listen at the given hostname (requires `server`).
 
 Serve the website from the given base URL (requires `server`).
 
+#### bundleExec `boolean`
+
+Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
+
 ## To-do
 
  - Provide in-line code examples to this readme.
