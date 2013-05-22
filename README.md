@@ -46,7 +46,7 @@ Directory where Jekyll will write files.
 
 Disables custom plugins.
 
-#### plugins `sring`
+#### plugins `string`
 
 Plugins directory (defaults to `./_plugins`).
 
