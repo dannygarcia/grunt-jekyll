@@ -1,4 +1,5 @@
 /*global module*/
+'use strict';
 module.exports = function (grunt) {
 
 	// Create a new multi task.
