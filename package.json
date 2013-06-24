@@ -21,7 +21,9 @@
 	"engines": {
 		"node": ">= 0.10.5"
 	},
-	"dependencies": {},
+	"dependencies": {
+    "tmp": "0.0.16"
+  },
 	"devDependencies": {
 		"grunt": ">= 0.4.1"
 	},
