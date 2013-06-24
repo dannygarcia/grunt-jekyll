@@ -27,6 +27,7 @@ module.exports = function (grunt) {
 			'server_port': '--port',
 			'host': '--host',
 			'baseurl': '--baseurl',
+			'trace': '--trace',
 
 			// Deprecated flags
 			'paginate': false,
