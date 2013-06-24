@@ -1,111 +1,204 @@
 # grunt-jekyll
 
-Straightforward [Jekyll](http://jekyllrb.com/) [Grunt](http://gruntjs.com/) plugin. It basically triggers the `jekyll` cli command with whatever options you set.
+> Compile [Jekyll](http://jekyllrb.com/) sites with [Grunt](http://gruntjs.com/).
 
-## Dependencies
+## Getting Started
 
- * [Node](http://nodejs.org/)
- * [Grunt](http://gruntjs.com/)
- * [Jekyll](http://jekyllrb.com/) `>= v1.0.0`
+This plugin requires [Grunt](http://gruntjs.com/) `~0.4.0` and [Jekyll](http://jekyllrb.com/) `>= v1.0.0`.
 
-## Quick Start
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide which explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process you may install this plugin with the command:
 
-Follow [this grunt.js example](https://gist.github.com/3753650) to get started with grunt-jekyll right away.
+```shell
+npm install grunt-jekyll --save-dev
+```
 
-## Installation & Options
+After the plugin has been installed, load it in your Gruntfile with:
 
-### Installation
+```js
+grunt.loadNpmTasks('grunt-jekyll');
+```
 
-Install this grunt plugin next to your project's `gruntfile.js` with:
+## Jekyll task
 
-	npm install grunt-jekyll
+_Run this task with the `grunt jekyll` command._
 
-It can just as easily be added to `package.json` under `devDependencies` as `grunt-jekyll`.
+This task helps you compile your Jekyll static site with Grunt.js.
 
-### Configuration Options
+### Options
 
-All the configuration options are:
+You can use all of the configuration options available in the [Jekyll Documentation](http://jekyllrb.com/docs/configuration/), as well as some special options provided by this plugin.
 
- * At the [Jekyll Documentation](http://jekyllrb.com/docs/configuration/).
- * Optional.
- * Explained here within the plugin's context:
+#### src
 
-#### server `boolean`
-
-Build with a server (defaults to `false` which just builds).
-
-#### src `string`
+Type: `string`  
+Default: `.`
 
 Directory where Jekyll will read files.
 
-#### dest `string`
+#### dest
+
+Type: `string`  
+Default: `./_site`
 
 Directory where Jekyll will write files.
 
-#### safe `boolean`
+#### watch
+
+Type: `boolean`  
+Default: `false`
+
+Regenerate the site when files are modified.  
+If you are running multiple watch tasks in a project you should use [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) instead.
+
+#### server
+
+Type: `boolean`  
+Default: `false`
+
+Build the site and start a development server. If false, the site is built with the `build` command.  
+For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) instead.
+
+#### config
+
+Type: `string`  
+Default: `_config.yml`
+
+Specify a custom configuration file. Multiple files separated by a comma will cascade right to left.
+
+#### raw
+
+Type: `string`  
+
+Create a temporary _config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
+
+#### safe
+
+Type: `boolean`  
+Default: `false`
 
 Disables custom plugins.
 
-#### plugins `string`
+#### plugins
 
-Plugins directory (defaults to `./_plugins`).
+Type: `string`  
+Default: `./_plugins`
 
-#### layouts `string`
+Specify a plugins directory.
 
-Layouts directory (defaults to `./_layouts`).
+#### layouts
 
-#### watch `boolean`
+Type: `string`  
+Default: `./_layouts`
 
-Enable auto-regeneration of the site when files are modified.
+Specify a layouts directory.
 
-#### auto `boolean`
+#### drafts
 
-Alias for `watch`.
-
-#### config `string`
-
-Custom configuration file directory.
-
-#### drafts `boolean`
+Type: `boolean`  
+Default: `false`
 
 Process and render draft posts.
 
-#### future `boolean`
+#### future
+
+Type: `boolean`  
+Default: `false`
 
 Publishes posts with a future date.
 
-#### lsi `boolean`
+#### lsi
+
+Type: `boolean`  
+Default: `false`
 
 Produce an index for related posts.
 
-#### limit_posts `number`
+#### limit_posts
+
+Type: `number`  
 
 Limit the number of posts to parse and publish.
 
-#### port `string or number`
+#### port
+
+Type: `string or number`  
 
 Listen on the given port (requires `server`).
 
-#### server_port `string or number`
+#### host
 
-Alias for `port`.
-
-#### host `string`
+Type: `string`  
 
 Listen at the given hostname (requires `server`).
 
-#### baseurl `string`
+#### baseurl
+
+Type: `string`  
 
 Serve the website from the given base URL (requires `server`).
 
-#### bundleExec `boolean`
+#### bundleExec
+
+Type: `boolean`  
+Default: `false`
 
 Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
 
-## To-do
+## Usage examples
 
- - Provide in-line code examples to this readme.
+Follow [this grunt.js example](https://gist.github.com/3753650) to get started with grunt-jekyll right away.
 
+### Example config
+
+```js
+grunt.initConfig({
+  jekyll: {                   			// Task
+  	options: {							// Universal options
+        bundleExec: true,
+        src : '<%= app %>'
+  	}
+    dist: { 	                		// Target
+      options: {	           			// Target options
+    	dest: '<%= dist %>',
+		config: '_config.yml,_config.build.yml'
+      }
+    },
+    serve: {                   			// Another target
+      options: {
+        dest: '.jekyll',
+        drafts: true
+      }
+    }
+  }
+});
+
+grunt.loadNpmTasks('grunt-jekyll');
+
+grunt.registerTask('default', ['jshint', 'jekyll']);
+```
+
+### Example usage
+
+#### Use the `raw` option
+
+```js
+grunt.initConfig({
+  jekyll: {
+    dist: {
+      options: {
+        config: '_config.yml'.
+        // Construct a string with JavaScript.
+        // Remember, in YAML line breaks and indentation matter.
+		raw: 'pygments: false\n' +
+			 'exclude: [\'development\']\n' +
+			 'author:\n' +
+             '  name: ' + fetchAuthor() + '\n' +
+             '  email: ' + fetchEmail() 
+        }
+    }
+  }
+});
+```
 
 ## Changelog
 
