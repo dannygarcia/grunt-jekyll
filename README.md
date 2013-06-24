@@ -109,6 +109,8 @@ Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.htm
 
 ## Changelog
 
+v0.3.8: Added robwierzbowski's raw option and other PRs.
+
 v0.3.6:
 
  - Reviewed Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and updated plugin with new flags.
