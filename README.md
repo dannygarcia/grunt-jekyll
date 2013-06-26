@@ -156,7 +156,7 @@ grunt.initConfig({
   	options: {							// Universal options
         bundleExec: true,
         src : '<%= app %>'
-  	}
+  	},
     dist: { 	                		// Target
       options: {	           			// Target options
     	dest: '<%= dist %>',
@@ -193,7 +193,7 @@ grunt.initConfig({
 			 'exclude: [\'development\']\n' +
 			 'author:\n' +
              '  name: ' + fetchAuthor() + '\n' +
-             '  email: ' + fetchEmail() 
+             '  email: ' + fetchEmail()
         }
     }
   }
