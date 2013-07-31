@@ -64,8 +64,10 @@ module.exports = function (grunt) {
 				command = 'bundle exec ' + command;
 			}
 
-			if (options.server) {
+			if (options.serve) {
 				command += ' serve';
+			} else if (options.server) {
+				command += ' server';
 			} else {
 				command += ' build';
 			}
