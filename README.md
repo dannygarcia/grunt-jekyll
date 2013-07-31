@@ -50,6 +50,15 @@ Default: `false`
 Regenerate the site when files are modified.  
 If you are running multiple watch tasks in a project you should use [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) instead.
 
+#### serve
+Type: `boolean`
+Default: `false`
+
+Build the site and start a development server. If false, the site is built with the `build` command.
+
+__If you are running a Jekyll version greater than 1.0, you'll want to use this, as server is deprecated.__ 
+
+[See Upgrading Jekyll Documentation](http://jekyllrb.com/docs/upgrading/) 
 #### server
 
 Type: `boolean`  
