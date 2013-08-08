@@ -90,21 +90,43 @@ module.exports = function (grunt) {
 				}
 			});
 
-			// Execute command
-			exec(command, function (err, stdout) {
+			function bundleInstall(next) {
+				var command, child;
+				command = 'bundle install --gemfile=app/Gemfile';
+			  if (fs.existsSync('app/Gemfile')) {
+          child = exec(command, function(error, stdout, stderr) {
+            grunt.log.write('\n\nBundle install:\n' + stdout);
+            if (error) {
+              grunt.fail.warn(error);
+              done(false);
+            } 
+            next();
+          });
+        } else {
+          next();
+        }
+			}
+	
+			function runJekyll(next) {
+				var child;
+				child = exec(command, function (error, stdout, stderr) {
+					grunt.log.write('\n\nJekyll output:\n' + stdout);
+					if (error) {
+						grunt.fail.warn(err);
+						done(false);
+					} 
+					next();
+				});
+			}
 
-				grunt.log.write('\n\nJekyll output:\n');
-				grunt.log.write(stdout);
-
-				if (err) {
-					grunt.fail.warn(err);
-					done(false);
-				} else {
+			// Kickoff the build
+			grunt.log.write('`' + command + '` was initiated.');
+			bundleInstall(function() {
+				runJekyll(function() {
 					done(true);
-				}
+				});
 			});
 
-			grunt.log.write('`' + command + '` was initiated.');
 		});
 	});
 };
