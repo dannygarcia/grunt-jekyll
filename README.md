@@ -211,6 +211,8 @@ grunt.initConfig({
 
 ## Changelog
 
+v0.3.9: Consolidating branches and bumping version #.
+
 v0.3.8: Added robwierzbowski's raw option and other PRs.
 
 v0.3.6:
