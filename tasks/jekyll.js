@@ -7,6 +7,7 @@ module.exports = function (grunt) {
 
 	// Create a new multi task
 	grunt.registerMultiTask('jekyll', 'This triggers the `jekyll` command.', function () {
+
 		var done = this.async();
 		var options = this.options();
 		var command = 'jekyll';
@@ -35,29 +36,48 @@ module.exports = function (grunt) {
 			'markdown': false,
 			'url': false
 		};
+		var version;
+		var rawConfigFile;
+
+		function testExists (next) {
+			exec('jekyll -v', function (error, stdout, stderr) {
+
+				if (error) {
+					grunt.fail.warn('Please install Jekyll before running this task.');
+					done(false);
+				}
+				if (stdout) {
+					// Stdout returns `jekyll 1.x.x`, match returns first semver digit
+					version = stdout.match(/\d+/);
+					next();
+				}
+			});
+		}
 
 		// Create temporary config file if needed
-		function configContext (cb) {
+		function configContext (next) {
 			if (options.raw) {
+				// Tmp file is only available within the context of this function
 				tmp.file({ prefix: '_config.', postfix: '.yml' }, function (err, path, fd) {
+
+					rawConfigFile = path;
+
 					if (err) {
-						return cb(err);
+						grunt.fail.warn(err);
 					}
 
+					// Write raw to file
 					fs.writeSync(fd, new Buffer(options.raw), 0, options.raw.length);
-
-					cb(null, path);
+					next();
 				});
-			} else {
-				cb(null, null);
+			}
+			else {
+				next();
 			}
 		}
 
-		// Run configContext with command processing and execution as a callback
-		configContext(function (err, path) {
-			if (err) {
-				grunt.fail.warn(err);
-			}
+		////// Run configContext with command processing and execution as a callback
+		function runJekyll (next) {
 
 			// Build the command string
 			if (options.bundleExec) {
@@ -66,17 +86,20 @@ module.exports = function (grunt) {
 
 			if (options.serve) {
 				command += ' serve';
-			} else if (options.server) {
+			}
+			else if (options.server) {
 				command += ' server';
-			} else if (options.doctor) {
+			}
+			else if (options.doctor) {
 				command += ' doctor';
-			} else {
+			}
+			else {
 				command += ' build';
 			}
 
 			// Insert temporary config path into the config option
-			if (path) {
-				options.config = options.config ? options.config + ',' + path : path;
+			if (typeof rawConfigFile != 'undefined') {
+				options.config = options.config ? options.config + ',' + rawConfigFile : rawConfigFile;
 			}
 
 			// Add flags to command if running serve or build
@@ -97,18 +120,26 @@ module.exports = function (grunt) {
 			// Execute command
 			exec(command, function (err, stdout) {
 
-				grunt.log.write('\n\nJekyll output:\n');
-				grunt.log.write(stdout);
+				grunt.log.write('\n\nJekyll output:\n' + stdout);
 
 				if (err) {
 					grunt.fail.warn(err);
 					done(false);
-				} else {
-					done(true);
+				}
+				else {
+					next();
 				}
 			});
+		}
 
-			grunt.log.write('`' + command + '` was initiated.');
+		// Run the command
+		grunt.log.write('`' + command + '` was initiated.\n');
+		testExists(function() {
+			configContext (function() {
+				runJekyll(function() {
+					done(true);
+				});
+			});
 		});
 	});
 };
