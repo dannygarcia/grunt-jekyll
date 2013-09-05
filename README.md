@@ -67,6 +67,13 @@ Default: `false`
 Build the site and start a development server. If false, the site is built with the `build` command.  
 For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) instead.
 
+#### doctor
+
+Type: `boolean`  
+Default: `false`
+
+Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
+
 #### config
 
 Type: `string`  

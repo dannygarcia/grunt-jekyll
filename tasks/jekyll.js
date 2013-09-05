@@ -68,6 +68,8 @@ module.exports = function (grunt) {
 				command += ' serve';
 			} else if (options.server) {
 				command += ' server';
+			} else if (options.doctor) {
+				command += ' doctor';
 			} else {
 				command += ' build';
 			}
@@ -77,18 +79,20 @@ module.exports = function (grunt) {
 				options.config = options.config ? options.config + ',' + path : path;
 			}
 
-			// Add flags to command
-			Object.keys(optionList).forEach(function (option) {
-				if (options[option]) {
-					command += ' ' + optionList[option];
-					if (typeof options[option] !== 'boolean') {
-						command += ' ' + options[option];
+			// Add flags to command if running serve or build
+			if (!options.doctor) {
+				Object.keys(optionList).forEach(function (option) {
+					if (options[option]) {
+						command += ' ' + optionList[option];
+						if (typeof options[option] !== 'boolean') {
+							command += ' ' + options[option];
+						}
+						if (!options[option]) {
+							grunt.warn('`' + option + '` has been deprecated. You may want to try this in the `raw` option in your gruntfile, or in a configuration file.');
+						}
 					}
-					if (!options[option]) {
-						grunt.warn('`' + option + '` has been deprecated. You may want to try this in the `raw` option in your gruntfile, or in a configuration file.');
-					}
-				}
-			});
+				});
+			}
 
 			// Execute command
 			exec(command, function (err, stdout) {
