@@ -5,7 +5,6 @@ module.exports = function (grunt) {
 	var tmp = require('tmp');
 	var exec = require('child_process').exec;
 
-	// Create a new multi task
 	grunt.registerMultiTask('jekyll', 'This triggers the `jekyll` command.', function () {
 
 		var done = this.async();
@@ -40,7 +39,8 @@ module.exports = function (grunt) {
 		var rawConfigFile;
 
 		function testExists (next) {
-			exec('jekyll -v', function (error, stdout, stderr) {
+			var versionCommand = options.bundleExec ? 'bundle exec jekyll -v' : 'jekyll -v';
+			exec(versionCommand, function (error, stdout, stderr) {
 
 				if (error) {
 					grunt.fail.warn('Please install Jekyll before running this task.');
@@ -76,7 +76,7 @@ module.exports = function (grunt) {
 			}
 		}
 
-		////// Run configContext with command processing and execution as a callback
+		// Run configContext with command execution as a callback
 		function runJekyll (next) {
 
 			// Build the command string
@@ -122,7 +122,6 @@ module.exports = function (grunt) {
 			}
 
 			exec(command, function (err, stdout) {
-
 				grunt.log.write('\n\nJekyll output:\n' + stdout);
 
 				if (err) {
