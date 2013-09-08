@@ -25,7 +25,10 @@
 		"tmp": "0.0.16"
 	},
 	"devDependencies": {
-		"grunt": ">= 0.4.1"
+		"grunt": "~0.4.1"
 	},
+   "peerDependencies": {
+    	"grunt": "~0.4.1"
+ 	},
 	"keywords": ["grunt.js", "jekyll", "grunt", "gruntplugin"]
 }
