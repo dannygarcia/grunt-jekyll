@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 			'markdown': false,
 			'url': false
 		};
-		var version;
+		var majorVersion;
 		var rawConfigFile;
 
 		function testExists (next) {
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 				}
 				if (stdout) {
 					// Stdout returns `jekyll 1.x.x`, match returns first semver digit
-					version = stdout.match(/\d+/);
+					majorVersion = stdout.match(/\d+/);
 					next();
 				}
 			});
@@ -85,10 +85,7 @@ module.exports = function (grunt) {
 			}
 
 			if (options.serve) {
-				command += ' serve';
-			}
-			else if (options.server) {
-				command += ' server';
+				command += majorVersion > 0 ? ' serve' : ' server';
 			}
 			else if (options.doctor) {
 				command += ' doctor';
@@ -118,6 +115,12 @@ module.exports = function (grunt) {
 			}
 
 			// Execute command
+			grunt.log.write('`' + command + '` was initiated.\n');
+
+			if (options.serve) {
+				grunt.log.write('Started Jekyll web server on http://localhost:4000. Waiting...\n');
+			}
+
 			exec(command, function (err, stdout) {
 
 				grunt.log.write('\n\nJekyll output:\n' + stdout);
@@ -133,7 +136,6 @@ module.exports = function (grunt) {
 		}
 
 		// Run the command
-		grunt.log.write('`' + command + '` was initiated.\n');
 		testExists(function() {
 			configContext (function() {
 				runJekyll(function() {
