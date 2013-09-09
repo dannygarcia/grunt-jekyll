@@ -8,7 +8,7 @@ module.exports = function (grunt) {
 	// Create a new multi task
 	grunt.registerMultiTask('jekyll', 'This triggers the `jekyll` command.', function () {
 		var done = this.async();
-		var options = Object.keys(this.options()).length ? this.options() : this.data;
+		var options = this.options();
 		var command = 'jekyll';
 		var optionList = {
 			'src': '--source',
