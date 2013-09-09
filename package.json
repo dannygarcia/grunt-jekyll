@@ -3,11 +3,8 @@
 	"description": "A custom grunt.js plugin that executes jekyll compile and/or watch for you",
 	"version": "0.3.9",
 	"homepage": "https://github.com/dannygarcia/grunt-jekyll",
-	"author": {
-		"name": "Danny Garcia",
-		"email": "contact@danny-garcia.com",
-		"url": "http://danny-garcia.com"
-	},
+	"author": "Danny Garcia <contact@danny-garcia.com> (http://danny-garcia.com)",
+	"contributors": ["Rob Wierzbowski <hello@robwierzbowski.com> (http://robwierzbowski.com)"],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/dannygarcia/grunt-jekyll.git"
