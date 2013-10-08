@@ -22,10 +22,13 @@
 		"node": ">= 0.10.5"
 	},
 	"dependencies": {
-		"tmp": "0.0.16"
 	},
 	"devDependencies": {
-		"grunt": ">= 0.4.1"
+		"grunt": ">= 0.4.1",
+		"grunt-mocha-test": "latest"
 	},
-	"keywords": ["grunt.js", "jekyll", "grunt", "gruntplugin"]
+	"keywords": ["grunt.js", "jekyll", "grunt", "gruntplugin"],
+	"scripts" : {
+		"test" : "mocha"
+	}
 }
