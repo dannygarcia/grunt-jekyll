@@ -30,6 +30,6 @@
 	},
 	"keywords": ["grunt.js", "jekyll", "grunt", "gruntplugin"],
 	"scripts" : {
-		"test" : "mocha"
+		"test" : "grunt test"
 	}
 }
