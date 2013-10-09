@@ -1,43 +1,43 @@
-"use strict";
+'use strict';
 
 module.exports = function (grunt) {
 
 	grunt.initConfig({
 		pkg: {
-			name: "grunt-jekyll"
+			name: 'grunt-jekyll'
 		},
 
-		// Configuration to be run (and then tested).
 		jekyll: {
+			actual: {
+				options: {
+					dest: './test/actual'
+				}
+			},
+			expected : {
+				options: {
+					dest: './test/expected'
+				}
+			},
 			options: {
-				src: "./test/app",
-				dest: "./test/actual"
+				src: './test/app'
 			}
 		},
 
 		mochaTest: {
-			test: {
-				options: {
-					reporter: "test"
-				},
-				src: ["test/test.js"]
-			}
+			options: {
+				reporter: 'list'
+			},
+			src: 'test/test.js'
 		}
 	});
 
-	// Actually load this plugin's task(s).
-	grunt.loadTasks("tasks");
-
-	// These plugins provide necessary tasks.
+	grunt.loadTasks('tasks');
 	grunt.loadNpmTasks('grunt-mocha-test');
 
-	// grunt.registerTask('mkdir', grunt.file.mkdir);
-
-	grunt.registerTask("test", [
-		"jekyll",
-		"mochaTest"
+	grunt.registerTask('test', [
+		'jekyll:expected',
+		'mochaTest'
 	]);
 
-	// By default, lint and run all tests.
-	grunt.registerTask('default', ["jekyll"]);
+	grunt.registerTask('default', 'test');
 };

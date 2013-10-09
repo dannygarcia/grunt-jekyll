@@ -22,6 +22,7 @@
 		"node": ">= 0.10.5"
 	},
 	"dependencies": {
+		"tmp": "0.0.21"
 	},
 	"devDependencies": {
 		"grunt": ">= 0.4.1",
