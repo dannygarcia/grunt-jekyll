@@ -1,7 +1,7 @@
 {
 	"name": "grunt-jekyll",
 	"description": "A custom grunt.js plugin that executes jekyll compile and/or watch for you",
-	"version": "0.3.9",
+	"version": "0.4.0",
 	"homepage": "https://github.com/dannygarcia/grunt-jekyll",
 	"author": "Danny Garcia <contact@danny-garcia.com> (http://danny-garcia.com)",
 	"contributors": ["Rob Wierzbowski <hello@robwierzbowski.com> (http://robwierzbowski.com)"],
@@ -16,16 +16,20 @@
 	"main": "grunt.js",
 	"bin": "bin/grunt-jekyll",
 	"engines": {
-		"node": ">=0.10.5"
+		"node": ">= 0.10.5"
 	},
 	"dependencies": {
 		"tmp": "0.0.21"
 	},
 	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-mocha-test": "latest"
+	},
+	"peerDependencies": {
 		"grunt": "~0.4.1"
 	},
-   "peerDependencies": {
-    	"grunt": "~0.4.1"
- 	},
+	"scripts" : {
+		"test" : "grunt test"
+	},
 	"keywords": ["grunt.js", "jekyll", "grunt", "gruntplugin"]
 }

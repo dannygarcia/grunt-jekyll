@@ -1,5 +1,7 @@
 # grunt-jekyll
 
+[![Build Status](https://travis-ci.org/dannygarcia/grunt-jekyll.png?branch=master)](https://travis-ci.org/dannygarcia/grunt-jekyll)
+
 > Compile [Jekyll](http://jekyllrb.com/) sites with [Grunt](http://gruntjs.com/).
 
 ## Getting Started
@@ -30,24 +32,24 @@ You can use all of the configuration options available in the [Jekyll Documentat
 
 #### src
 
-Type: `string`  
+Type: `string`
 Default: `.`
 
 Directory where Jekyll will read files.
 
 #### dest
 
-Type: `string`  
+Type: `string`
 Default: `./_site`
 
 Directory where Jekyll will write files.
 
 #### watch
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
-Regenerate the site when files are modified.  
+Regenerate the site when files are modified.
 If you are running multiple watch tasks in a project you should use [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) instead.
 
 #### serve
@@ -56,15 +58,15 @@ Default: `false`
 
 Build the site and start a development server. If false, the site is built with the `build` command.
 
-__If you are running a Jekyll version greater than 1.0, you'll want to use this, as server is deprecated.__ 
+__If you are running a Jekyll version greater than 1.0, you'll want to use this, as server is deprecated.__
 
-[See Upgrading Jekyll Documentation](http://jekyllrb.com/docs/upgrading/) 
+[See Upgrading Jekyll Documentation](http://jekyllrb.com/docs/upgrading/)
 #### server
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
-Build the site and start a development server. If false, the site is built with the `build` command.  
+Build the site and start a development server. If false, the site is built with the `build` command.
 For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) instead.
 
 #### doctor
@@ -76,86 +78,86 @@ Test your site for common errors and deprecated code. Ignores all other options 
 
 #### config
 
-Type: `string`  
+Type: `string`
 Default: `_config.yml`
 
 Specify a custom configuration file. Multiple files separated by a comma will cascade right to left.
 
 #### raw
 
-Type: `string`  
+Type: `string`
 
 Create a temporary _config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
 
 #### safe
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Disables custom plugins.
 
 #### plugins
 
-Type: `string`  
+Type: `string`
 Default: `./_plugins`
 
 Specify a plugins directory.
 
 #### layouts
 
-Type: `string`  
+Type: `string`
 Default: `./_layouts`
 
 Specify a layouts directory.
 
 #### drafts
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Process and render draft posts.
 
 #### future
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Publishes posts with a future date.
 
 #### lsi
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Produce an index for related posts.
 
 #### limit_posts
 
-Type: `number`  
+Type: `number`
 
 Limit the number of posts to parse and publish.
 
 #### port
 
-Type: `string or number`  
+Type: `string or number`
 
 Listen on the given port (requires `server`).
 
 #### host
 
-Type: `string`  
+Type: `string`
 
 Listen at the given hostname (requires `server`).
 
 #### baseurl
 
-Type: `string`  
+Type: `string`
 
 Serve the website from the given base URL (requires `server`).
 
 #### bundleExec
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
@@ -217,6 +219,8 @@ grunt.initConfig({
 ```
 
 ## Changelog
+
+v0.4.0: Added setup for tests.
 
 v0.3.9: Consolidating branches and bumping version #.
 
