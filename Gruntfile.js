@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 			}
 		},
 
-		mocha: {
+		mochaTest: {
 			options: {
 				reporter: 'list'
 			},
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'jekyll:expected',
-		'mocha'
+		'mochaTest'
 	]);
 
 	grunt.registerTask('default', 'test');
