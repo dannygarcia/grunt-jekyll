@@ -1,5 +1,7 @@
 # grunt-jekyll
 
+[![Build Status](https://travis-ci.org/dannygarcia/grunt-jekyll.png?branch=master)](https://travis-ci.org/dannygarcia/grunt-jekyll)
+
 > Compile [Jekyll](http://jekyllrb.com/) sites with [Grunt](http://gruntjs.com/).
 
 ## Getting Started
