@@ -56,17 +56,10 @@ If you are running multiple watch tasks in a project you should use [grunt-contr
 Type: `boolean`
 Default: `false`
 
-Build the site and start a development server. If false, the site is built with the `build` command.
+Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with `ctrl+c`
 
-__If you are running a Jekyll version greater than 1.0, you'll want to use this, as server is deprecated.__
+If serve is false, the site is built with the `build` command.  
 
-[See Upgrading Jekyll Documentation](http://jekyllrb.com/docs/upgrading/)
-#### server
-
-Type: `boolean`
-Default: `false`
-
-Build the site and start a development server. If false, the site is built with the `build` command.
 For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) instead.
 
 #### doctor
