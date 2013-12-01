@@ -213,31 +213,21 @@ grunt.initConfig({
 
 ## Changelog
 
-v0.4.0: Added setup for tests.
-
-v0.3.9: Consolidating branches and bumping version #.
-
-v0.3.8: Added robwierzbowski's raw option and other PRs.
-
-v0.3.6:
-
- - Reviewed Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and updated plugin with new flags.
- - Reviewed and warned about deprecated flags.
- - Updated documentation to match flag updates. (Rewritten as a list)
-
-v0.3.3: Updated link in documentation. Added to-do list.
-
-v0.3.2: Added option to select config file. Removed deprecated --pygments option flag. Bugfixes.
-
-v0.3.0: Update for Jekyll 1.0
-
-v0.2.1: Fixed destination path option.
-
-v0.2.0: Updated README with better options. Options are more flexible.
-
-v0.1.6: Updated README with better example.
-
-v0.1.0: Initial Release.
+- v0.4.1: Internal optimizations.
+- v0.4.0: Added setup for tests.
+- v0.3.9: Consolidating branches and bumping version #.
+- v0.3.8: Added robwierzbowski's raw option and other PRs.
+- v0.3.6:
+    - Reviewed Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and updated plugin with new flags.
+    - Reviewed and warned about deprecated flags.
+    - Updated documentation to match flag updates. (Rewritten as a list)
+- v0.3.3: Updated link in documentation. Added to-do list.
+- v0.3.2: Added option to select config file. Removed deprecated --pygments option flag. Bugfixes.
+- v0.3.0: Update for Jekyll 1.0
+- v0.2.1: Fixed destination path option.
+- v0.2.0: Updated README with better options. Options are more flexible.
+- v0.1.6: Updated README with better example.
+- v0.1.0: Initial Release.
 
 
 ## MIT License
