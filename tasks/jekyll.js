@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 			grunt.log.write('`' + command + '` was initiated.\n');
 
 			if (options.serve) {
-				grunt.log.write('Started Jekyll web server on http://localhost:4000. Waiting...\n');
+				grunt.log.write('Started Jekyll web server on http://localhost:' + (options.port || 4000) + '. Waiting...\n');
 			}
 
 			exec(command, function (err, stdout) {
