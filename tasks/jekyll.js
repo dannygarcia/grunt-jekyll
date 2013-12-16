@@ -43,6 +43,7 @@ module.exports = function (grunt) {
 			exec(versionCommand, function (error, stdout, stderr) {
 
 				if (error) {
+					grunt.log.error(error);
 					grunt.fail.warn('Please install Jekyll before running this task.');
 					done(false);
 				}
