@@ -56,7 +56,7 @@ If you are running multiple watch tasks in a project you should use [grunt-contr
 Type: `boolean`
 Default: `false`
 
-Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with `ctrl+c`
+Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 If serve is false, the site is built with the `build` command.  
 
