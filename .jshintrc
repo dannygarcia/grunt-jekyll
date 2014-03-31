@@ -1,5 +1,5 @@
 {
-  "smarttabs" : true
+  "smarttabs" : true,
   "quotmark" : "single",
   "esnext" : true,
   "passfail" : false,
@@ -11,7 +11,6 @@
   "wsh" : false,
   "debug" : false,
   "devel" : true,
-  "es5" : true,
   "strict" : false,
   "globalstrict" : false,
   "asi" : false,

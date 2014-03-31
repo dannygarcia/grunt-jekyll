@@ -28,13 +28,25 @@ module.exports = function (grunt) {
 				reporter: 'list'
 			},
 			src: 'test/test.js'
+		},
+
+		jshint: {
+			options: {
+				jshintrc: '.jshintrc'
+			},
+			files: {
+				src: ['Gruntfile.js', 'tasks/*.js', 'test/*.js']
+			}
 		}
+
 	});
 
 	grunt.loadTasks('tasks');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-mocha-test');
 
 	grunt.registerTask('test', [
+		'jshint',
 		'jekyll:expected',
 		'mochaTest'
 	]);

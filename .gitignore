@@ -1,3 +1,4 @@
 .DS_Store
 node_modules/
 test/expected/
+/npm-debug.log
