@@ -1,6 +1,8 @@
 # grunt-jekyll
 
 [![Build Status](https://travis-ci.org/dannygarcia/grunt-jekyll.png?branch=master)](https://travis-ci.org/dannygarcia/grunt-jekyll)
+[![Dependency Status](https://david-dm.org/dannygarcia/grunt-jekyll.png?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll)
+[![devDependency Status](https://david-dm.org/dannygarcia/grunt-jekyll/dev-status.png?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll#info=devDependencies)
 
 > Compile [Jekyll](http://jekyllrb.com/) sites with [Grunt](http://gruntjs.com/).
 
