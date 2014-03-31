@@ -1,5 +1,5 @@
-/*global module*/
 'use strict';
+
 module.exports = function (grunt) {
 	var fs = require('fs');
 	var tmp = require('tmp');
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
 
 		function testExists (next) {
 			var versionCommand = options.bundleExec ? 'bundle exec jekyll -v' : 'jekyll -v';
-			exec(versionCommand, function (error, stdout, stderr) {
+			exec(versionCommand, function (error, stdout) {
 
 				if (error) {
 					grunt.log.error(error);
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 			}
 
 			// Insert temporary config path into the config option
-			if (typeof rawConfigFile != 'undefined') {
+			if (typeof rawConfigFile !== 'undefined') {
 				options.config = options.config ? options.config + ',' + rawConfigFile : rawConfigFile;
 			}
 
