@@ -133,7 +133,7 @@ Limit the number of posts to parse and publish.
 
 #### port
 
-Type: `string or number`
+Type: `string` or `number`
 
 Listen on the given port (requires `serve`).
 
