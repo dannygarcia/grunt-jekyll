@@ -13,7 +13,6 @@
 		"url": "https://github.com/dannygarcia/grunt-jekyll/issues"
 	},
 	"licenses": "MIT",
-	"main": "grunt.js",
 	"bin": "bin/grunt-jekyll",
 	"engines": {
 		"node": ">= 0.10.5"
@@ -31,5 +30,5 @@
 	"scripts" : {
 		"test" : "grunt test"
 	},
-	"keywords": ["grunt.js", "jekyll", "grunt", "gruntplugin"]
+	"keywords": ["jekyll", "grunt", "gruntplugin"],
 }
