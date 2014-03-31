@@ -53,12 +53,13 @@ Regenerate the site when files are modified.
 If you are running multiple watch tasks in a project you should use [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) instead.
 
 #### serve
+
 Type: `boolean`
 Default: `false`
 
 Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
-If serve is false, the site is built with the `build` command.  
+If `serve` is false, the site is built with the `build` command.  
 
 For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) instead.
 
@@ -134,19 +135,19 @@ Limit the number of posts to parse and publish.
 
 Type: `string or number`
 
-Listen on the given port (requires `server`).
+Listen on the given port (requires `serve`).
 
 #### host
 
 Type: `string`
 
-Listen at the given hostname (requires `server`).
+Listen at the given hostname (requires `serve`).
 
 #### baseurl
 
 Type: `string`
 
-Serve the website from the given base URL (requires `server`).
+Serve the website from the given base URL (requires `serve`).
 
 #### bundleExec
 
