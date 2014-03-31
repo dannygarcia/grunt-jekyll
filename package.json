@@ -31,4 +31,5 @@
 		"test" : "grunt test"
 	},
 	"keywords": ["jekyll", "grunt", "gruntplugin"],
+	"files": ["bin", "tasks"]
 }
