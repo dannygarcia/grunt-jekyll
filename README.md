@@ -34,21 +34,21 @@ You can use all of the configuration options available in the [Jekyll Documentat
 
 #### src
 
-Type: `string`
+Type: `string`  
 Default: `.`
 
 Directory where Jekyll will read files.
 
 #### dest
 
-Type: `string`
+Type: `string`  
 Default: `./_site`
 
 Directory where Jekyll will write files.
 
 #### watch
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Regenerate the site when files are modified.
@@ -56,7 +56,7 @@ If you are running multiple watch tasks in a project you should use [grunt-contr
 
 #### serve
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
@@ -67,93 +67,93 @@ For complex projects you may want to use [grunt-contrib-connect](https://github.
 
 #### doctor
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
 
 #### config
 
-Type: `string`
+Type: `string`  
 Default: `_config.yml`
 
 Specify a custom configuration file. Multiple files separated by a comma will cascade right to left.
 
 #### raw
 
-Type: `string`
+Type: `string`  
 
 Create a temporary _config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
 
 #### safe
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Disables custom plugins.
 
 #### plugins
 
-Type: `string`
+Type: `string`  
 Default: `./_plugins`
 
 Specify a plugins directory.
 
 #### layouts
 
-Type: `string`
+Type: `string`  
 Default: `./_layouts`
 
 Specify a layouts directory.
 
 #### drafts
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Process and render draft posts.
 
 #### future
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Publishes posts with a future date.
 
 #### lsi
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Produce an index for related posts.
 
 #### limit_posts
 
-Type: `number`
+Type: `number`  
 
 Limit the number of posts to parse and publish.
 
 #### port
 
-Type: `string` or `number`
+Type: `string` or `number`  
 
 Listen on the given port (requires `serve`).
 
 #### host
 
-Type: `string`
+Type: `string`  
 
 Listen at the given hostname (requires `serve`).
 
 #### baseurl
 
-Type: `string`
+Type: `string`  
 
 Serve the website from the given base URL (requires `serve`).
 
 #### bundleExec
 
-Type: `boolean`
+Type: `boolean`  
 Default: `false`
 
 Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
