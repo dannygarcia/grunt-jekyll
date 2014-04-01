@@ -61,13 +61,13 @@ Default: `false`
 
 Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
-If `serve` is false, the site is built with the `build` command.  
+If `serve` is false, the site is built with the `build` command.
 
 For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) instead.
 
 #### doctor
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
@@ -166,18 +166,18 @@ Follow [this grunt.js example](https://gist.github.com/3753650) to get started w
 
 ```js
 grunt.initConfig({
-  jekyll: {                   			// Task
-  	options: {							// Universal options
-        bundleExec: true,
-        src : '<%= app %>'
-  	},
-    dist: { 	                		// Target
-      options: {	           			// Target options
-    	dest: '<%= dist %>',
-		config: '_config.yml,_config.build.yml'
+  jekyll: {                             // Task
+    options: {                          // Universal options
+      bundleExec: true,
+      src : '<%= app %>'
+    },
+    dist: {                             // Target
+      options: {                        // Target options
+        dest: '<%= dist %>',
+        config: '_config.yml,_config.build.yml'
       }
     },
-    serve: {                   			// Another target
+    serve: {                            // Another target
       options: {
         dest: '.jekyll',
         drafts: true
@@ -200,15 +200,15 @@ grunt.initConfig({
   jekyll: {
     dist: {
       options: {
-        config: '_config.yml'.
+        config: '_config.yml',
         // Construct a string with JavaScript.
         // Remember, in YAML line breaks and indentation matter.
-		raw: 'pygments: false\n' +
-			 'exclude: [\'development\']\n' +
-			 'author:\n' +
+        raw: 'pygments: false\n' +
+             'exclude: [\'development\']\n' +
+             'author:\n' +
              '  name: ' + fetchAuthor() + '\n' +
              '  email: ' + fetchEmail()
-        }
+      }
     }
   }
 });
@@ -249,4 +249,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dannygarcia/grunt-jekyll/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
