@@ -1,10 +1,11 @@
-/* global describe, it */
+/* jshint mocha:true */
+
+'use strict';
 
 var assert = require('assert');
 var grunt = require('grunt');
 
 describe('grunt', function () {
-	'use strict';
 	describe('jekyll', function () {
 		it('should compile', function () {
 
