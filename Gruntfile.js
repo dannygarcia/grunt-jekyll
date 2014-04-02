@@ -9,16 +9,16 @@ module.exports = function (grunt) {
 
 		jekyll: {
 			options: {
-				src: './test/app'
+				src: 'test/app'
 			},
 			actual: {
 				options: {
-					dest: './test/actual'
+					dest: 'test/actual'
 				}
 			},
 			expected : {
 				options: {
-					dest: './test/expected'
+					dest: 'test/expected'
 				}
 			}
 		},
