@@ -216,6 +216,7 @@ grunt.initConfig({
 
 ## Changelog
 
+- v0.4.2: More internal optimizations.
 - v0.4.1: Internal optimizations.
 - v0.4.0: Added setup for tests.
 - v0.3.9: Consolidating branches and bumping version number.
