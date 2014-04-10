@@ -1,8 +1,8 @@
 # grunt-jekyll
 
-[![Build Status](https://travis-ci.org/dannygarcia/grunt-jekyll.png?branch=master)](https://travis-ci.org/dannygarcia/grunt-jekyll)
-[![Dependency Status](https://david-dm.org/dannygarcia/grunt-jekyll.png?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll)
-[![devDependency Status](https://david-dm.org/dannygarcia/grunt-jekyll/dev-status.png?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll#info=devDependencies)
+[![Build Status](https://travis-ci.org/dannygarcia/grunt-jekyll.svg?branch=master)](https://travis-ci.org/dannygarcia/grunt-jekyll)
+[![Dependency Status](https://david-dm.org/dannygarcia/grunt-jekyll.svg?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll)
+[![devDependency Status](https://david-dm.org/dannygarcia/grunt-jekyll/dev-status.svg?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll#info=devDependencies)
 
 > Compile [Jekyll](http://jekyllrb.com/) sites with [Grunt](http://gruntjs.com/).
 
@@ -26,7 +26,7 @@ grunt.loadNpmTasks('grunt-jekyll');
 
 _Run this task with the `grunt jekyll` command._
 
-This task helps you compile your Jekyll static site with Grunt.js.
+This task helps you compile your Jekyll static site with Grunt.
 
 ### Options
 
@@ -34,21 +34,21 @@ You can use all of the configuration options available in the [Jekyll Documentat
 
 #### src
 
-Type: `string`  
+Type: `string` <br/>
 Default: `.`
 
 Directory where Jekyll will read files.
 
 #### dest
 
-Type: `string`  
+Type: `string` <br/>
 Default: `./_site`
 
 Directory where Jekyll will write files.
 
 #### watch
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Regenerate the site when files are modified.
@@ -56,7 +56,7 @@ If you are running multiple watch tasks in a project you should use [grunt-contr
 
 #### serve
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
@@ -67,100 +67,100 @@ For complex projects you may want to use [grunt-contrib-connect](https://github.
 
 #### doctor
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
 
 #### config
 
-Type: `string`  
+Type: `string` <br/>
 Default: `_config.yml`
 
 Specify a custom configuration file. Multiple files separated by a comma will cascade right to left.
 
 #### raw
 
-Type: `string`  
+Type: `string`
 
 Create a temporary _config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
 
 #### safe
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Disables custom plugins.
 
 #### plugins
 
-Type: `string`  
+Type: `string` <br/>
 Default: `./_plugins`
 
 Specify a plugins directory.
 
 #### layouts
 
-Type: `string`  
+Type: `string` <br/>
 Default: `./_layouts`
 
 Specify a layouts directory.
 
 #### drafts
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Process and render draft posts.
 
 #### future
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Publishes posts with a future date.
 
 #### lsi
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Produce an index for related posts.
 
 #### limit_posts
 
-Type: `number`  
+Type: `number` <br/>
 
 Limit the number of posts to parse and publish.
 
 #### port
 
-Type: `string` or `number`  
+Type: `string` or `number` <br/>
 
 Listen on the given port (requires `serve`).
 
 #### host
 
-Type: `string`  
+Type: `string` <br/>
 
 Listen at the given hostname (requires `serve`).
 
 #### baseurl
 
-Type: `string`  
+Type: `string` <br/>
 
 Serve the website from the given base URL (requires `serve`).
 
 #### bundleExec
 
-Type: `boolean`  
+Type: `boolean` <br/>
 Default: `false`
 
 Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
 
 ## Usage examples
 
-Follow [this grunt.js example](https://gist.github.com/3753650) to get started with grunt-jekyll right away.
+Follow [this Grunt example](https://gist.github.com/3753650) to get started with grunt-jekyll right away.
 
 ### Example config
 
@@ -216,16 +216,17 @@ grunt.initConfig({
 
 ## Changelog
 
+- v0.4.2: More internal optimizations.
 - v0.4.1: Internal optimizations.
 - v0.4.0: Added setup for tests.
-- v0.3.9: Consolidating branches and bumping version #.
-- v0.3.8: Added robwierzbowski's raw option and other PRs.
+- v0.3.9: Consolidating branches and bumping version number.
+- v0.3.8: Added [@robwierzbowski](https://github.com/robwierzbowski)'s raw option and other PRs.
 - v0.3.6:
-    - Reviewed Jekyll [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and updated plugin with new flags.
+    - Reviewed Jekyll's [source](https://github.com/mojombo/jekyll/blob/master/bin/jekyll) and updated plugin with new flags.
     - Reviewed and warned about deprecated flags.
     - Updated documentation to match flag updates. (Rewritten as a list)
 - v0.3.3: Updated link in documentation. Added to-do list.
-- v0.3.2: Added option to select config file. Removed deprecated --pygments option flag. Bugfixes.
+- v0.3.2: Added option to select config file. Removed deprecated `--pygments` option flag. Bugfixes.
 - v0.3.0: Update for Jekyll 1.0
 - v0.2.1: Fixed destination path option.
 - v0.2.0: Updated README with better options. Options are more flexible.
