@@ -42,14 +42,15 @@ module.exports = function (grunt) {
 			var versionCommand = options.bundleExec ? 'bundle exec jekyll -v' : 'jekyll -v';
 			exec(versionCommand, function (error, stdout) {
 
-				if (error) {
-					grunt.log.error(error);
-					grunt.fail.warn('Please install Jekyll before running this task.');
+				majorVersion = stdout.match(/\d+/);
+
+				if (majorVersion < 2 && error !== null) {
+					grunt.log.error(error + versionCommand);
+					grunt.fail.fatal('Please install Jekyll before running this task.');
 					done(false);
 				}
 				if (stdout) {
 					// Stdout returns `jekyll 1.x.x`, match returns first semver digit
-					majorVersion = stdout.match(/\d+/);
 					next();
 				}
 			});
