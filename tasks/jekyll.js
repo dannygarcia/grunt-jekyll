@@ -114,6 +114,11 @@ module.exports = function (grunt) {
 					}
 				});
 			}
+			else {
+				if (options.src) {
+					command += ' ' + optionList.src + ' ' + options.src;
+				}
+			}
 
 			// Execute command
 			grunt.log.write('`' + command + '` was initiated.\n');
