@@ -203,7 +203,7 @@ grunt.initConfig({
         config: '_config.yml',
         // Construct a string with JavaScript.
         // Remember, in YAML line breaks and indentation matter.
-        raw: 'pygments: false\n' +
+        raw: 'highlighter: pygments\n' +
              'exclude: [\'development\']\n' +
              'author:\n' +
              '  name: ' + fetchAuthor() + '\n' +
