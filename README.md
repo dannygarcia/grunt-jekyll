@@ -1,5 +1,7 @@
 # grunt-jekyll
 
+__Currently seeking someone to maintain this project.__
+
 [![Build Status](https://travis-ci.org/dannygarcia/grunt-jekyll.svg?branch=master)](https://travis-ci.org/dannygarcia/grunt-jekyll)
 [![Dependency Status](https://david-dm.org/dannygarcia/grunt-jekyll.svg?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll)
 [![devDependency Status](https://david-dm.org/dannygarcia/grunt-jekyll/dev-status.svg?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll#info=devDependencies)
