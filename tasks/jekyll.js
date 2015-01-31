@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 			'plugins': '--plugins',
 			'layouts': '--layouts',
 			'watch': '--watch',
-      'nowatch': '--no-watch',
+      			'nowatch': '--no-watch',
 			'auto': '--watch',
 			'config': '--config',
 			'drafts': '--drafts',
