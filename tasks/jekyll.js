@@ -130,6 +130,12 @@ module.exports = function (grunt) {
 					}
 				});
 			}
+			else {
+				if (options.src) {
+					args.push(optionList.src);
+					args.push(options.src);
+				}
+			}
 
 			// Execute command
 			command = cmd + ' ' + args.join(' ');
