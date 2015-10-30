@@ -135,6 +135,18 @@ Type: `number` <br/>
 
 Limit the number of posts to parse and publish.
 
+#### force_polling
+
+Type: `boolean` <br/>
+
+Force watch to use polling.
+
+#### verbose
+
+Type: `boolean` <br/>
+
+Print verbose output.
+
 #### quiet
 
 Type: `boolean` <br/>

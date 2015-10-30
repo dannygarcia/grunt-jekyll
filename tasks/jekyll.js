@@ -28,6 +28,8 @@ module.exports = function (grunt) {
 			'future': '--future',
 			'lsi': '--lsi',
 			'limit_posts': '--limit_posts',
+			'force_polling': '--force_polling',
+			'verbose': '--verbose',
 			'quiet': '--quiet',
 			'incremental': '--incremental',
 
