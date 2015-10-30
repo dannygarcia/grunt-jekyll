@@ -18,15 +18,15 @@
 		"node": ">= 0.10.5"
 	},
 	"dependencies": {
-		"tmp": "~0.0.23"
+		"tmp": "^0.0.28"
 	},
 	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-contrib-jshint": "~0.10.0",
-		"grunt-mocha-test": "~0.10.0"
+		"grunt": "^0.4.5",
+		"grunt-contrib-jshint": "^0.11.3",
+		"grunt-mocha-test": "^0.12.7"
 	},
 	"peerDependencies": {
-		"grunt": "~0.4.1"
+		"grunt": ">=0.4.1"
 	},
 	"scripts" : {
 		"test" : "grunt test"
