@@ -11,27 +11,32 @@ module.exports = function (grunt) {
 		var options = this.options();
 		var command = 'jekyll';
 		var optionList = {
+			// Global Options
 			'src': '--source',
 			'dest': '--destination',
 			'safe': '--safe',
 			'plugins': '--plugins',
 			'layouts': '--layouts',
-			'watch': '--watch',
+			'trace': '--trace',
+
+			// Build Command Options
 			'auto': '--watch',
+			'watch': '--watch',
 			'no_watch': '--no-watch',
-			'skip_initial_build': '--skip-initial-build',
 			'config': '--config',
 			'drafts': '--drafts',
 			'future': '--future',
 			'lsi': '--lsi',
 			'limit_posts': '--limit_posts',
-			'incremental': '--incremental',
 			'quiet': '--quiet',
+			'incremental': '--incremental',
+
+			// Serve Command Options
 			'port': '--port',
 			'server_port': '--port',
 			'host': '--host',
 			'baseurl': '--baseurl',
-			'trace': '--trace',
+			'skip_initial_build': '--skip-initial-build',
 
 			// Deprecated flags
 			'paginate': false,
