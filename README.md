@@ -24,11 +24,31 @@ After the plugin has been installed, load it in your Gruntfile with:
 grunt.loadNpmTasks('grunt-jekyll');
 ```
 
-## Jekyll task
+## Jekyll Task
 
 _Run this task with the `grunt jekyll` command._
 
 This task helps you compile your Jekyll static site with Grunt.
+
+### Jekyll Subcommands
+
+#### serve
+
+Type: `boolean`  
+Default: `false`
+
+Build the site and start a Jekyll development server on `http://localhost:4000`. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+
+If `serve` is false, the site is built with the `build` command.
+
+For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) or [grunt-browser-sync](https://github.com/BrowserSync/grunt-browser-sync) instead.
+
+#### doctor
+
+Type: `boolean`  
+Default: `false`
+
+Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
 
 ### Options
 
@@ -55,24 +75,6 @@ Default: `false`
 
 Regenerate the site when files are modified.
 If you are running multiple watch tasks in a project you should use [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) instead.
-
-#### serve
-
-Type: `boolean`  
-Default: `false`
-
-Build the site and start a Jekyll development server on http://localhost:4000. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
-
-If `serve` is false, the site is built with the `build` command.
-
-For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) instead.
-
-#### doctor
-
-Type: `boolean`  
-Default: `false`
-
-Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
 
 #### config
 

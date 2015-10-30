@@ -106,9 +106,6 @@ module.exports = function (grunt) {
 			else if (options.doctor) {
 				args.push('doctor');
 			}
-			else if (options.serve) {
-				args.push('serve');
-			}
 			else {
 				args.push('build');
 			}
