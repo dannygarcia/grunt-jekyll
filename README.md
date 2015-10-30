@@ -85,7 +85,7 @@ Specify a custom configuration file. Multiple files separated by a comma will ca
 
 Type: `string`
 
-Create a temporary _config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
+Create a temporary \_config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
 
 #### safe
 
