@@ -132,6 +132,11 @@ module.exports = function (grunt) {
 					}
 				});
 			}
+			else {
+				if (options.src) {
+					command += ' ' + optionList.src + ' ' + options.src;
+				}
+			}
 
 			// Execute command
 			command = cmd + ' ' + args.join(' ');
