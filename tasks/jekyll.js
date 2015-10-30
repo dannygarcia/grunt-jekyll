@@ -23,6 +23,7 @@ module.exports = function (grunt) {
 			'future': '--future',
 			'lsi': '--lsi',
 			'limit_posts': '--limit_posts',
+			'incremental': '--incremental',
 			'port': '--port',
 			'server_port': '--port',
 			'host': '--host',
