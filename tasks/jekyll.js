@@ -24,6 +24,7 @@ module.exports = function (grunt) {
 			'lsi': '--lsi',
 			'limit_posts': '--limit_posts',
 			'incremental': '--incremental',
+			'quiet': '--quiet',
 			'port': '--port',
 			'server_port': '--port',
 			'host': '--host',
