@@ -92,7 +92,7 @@ Create a temporary \_config.yml with the contents of `raw`. This config file has
 Type: `boolean` <br/>
 Default: `false`
 
-Disables custom plugins.
+Disables custom plugins, and ignore symbolic links.
 
 #### plugins
 
@@ -134,6 +134,18 @@ Produce an index for related posts.
 Type: `number` <br/>
 
 Limit the number of posts to parse and publish.
+
+#### quiet
+
+Type: `boolean` <br/>
+
+Silence the normal output from Jekyll during a build.
+
+#### incremental
+
+Type: `boolean` <br/>
+
+Enable the experimental incremental build feature. Incremental build only re-builds posts and pages that have changed, resulting in significant performance improvements for large sites, but may also break site generation in certain cases.
 
 #### port
 
