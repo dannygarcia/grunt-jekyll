@@ -19,6 +19,7 @@ module.exports = function (grunt) {
 			'watch': '--watch',
 			'auto': '--watch',
 			'no_watch': '--no-watch',
+			'skip_initial_build': '--skip-initial-build',
 			'config': '--config',
 			'drafts': '--drafts',
 			'future': '--future',
