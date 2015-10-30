@@ -17,6 +17,7 @@ module.exports = function (grunt) {
 			'safe': '--safe',
 			'plugins': '--plugins',
 			'layouts': '--layouts',
+			'profile': '--profile',
 			'trace': '--trace',
 
 			// Build Command Options
