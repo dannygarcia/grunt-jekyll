@@ -18,6 +18,8 @@ module.exports = function (grunt) {
 			'layouts': '--layouts',
 			'watch': '--watch',
 			'auto': '--watch',
+			'no_watch': '--no-watch',
+			'skip_initial_build': '--skip-initial-build',
 			'config': '--config',
 			'drafts': '--drafts',
 			'future': '--future',
@@ -96,6 +98,9 @@ module.exports = function (grunt) {
 			}
 			else if (options.doctor) {
 				args.push('doctor');
+			}
+			else if (options.serve) {
+				args.push('serve');
 			}
 			else {
 				args.push('build');

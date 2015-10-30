@@ -1,6 +1,9 @@
+sudo: false
 language: node_js
 node_js:
   - "0.10"
+before_install:
+  - rvm use 2.2.3 --install --fuzzy
 install:
   - travis_retry gem install --no-document jekyll
   - travis_retry npm install -g grunt-cli
