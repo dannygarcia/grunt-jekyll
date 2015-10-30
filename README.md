@@ -48,7 +48,7 @@ Default: `./_site`
 
 Directory where Jekyll will write files.
 
-#### watch
+#### [no_]watch
 
 Type: `boolean` <br/>
 Default: `false`
@@ -164,6 +164,12 @@ Listen at the given hostname (requires `serve`).
 Type: `string` <br/>
 
 Serve the website from the given base URL (requires `serve`).
+
+#### skip_initial_build
+
+Type: `boolean` <br/>
+
+Skips the initial site build which occurs before the server is started.
 
 #### bundleExec
 
