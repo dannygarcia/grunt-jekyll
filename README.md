@@ -252,6 +252,7 @@ grunt.initConfig({
 
 ## Changelog
 
+- v0.4.3: More options support for Jekyll 3.0.0
 - v0.4.2: More internal optimizations.
 - v0.4.1: Internal optimizations.
 - v0.4.0: Added setup for tests.
