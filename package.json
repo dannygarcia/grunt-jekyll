@@ -5,7 +5,22 @@
   "homepage": "https://github.com/dannygarcia/grunt-jekyll",
   "author": "Danny Garcia <contact@danny-garcia.com> (http://danny-garcia.com)",
   "contributors": [
-    "Rob Wierzbowski <hello@robwierzbowski.com> (http://robwierzbowski.com)"
+    "Rob Wierzbowski <hello@robwierzbowski.com>",
+    "Danny Garcia <contact@danny-garcia.com>",
+    "Tunghsiao Liu <t@sparanoid.com>",
+    "XhmikosR <xhmikosr@users.sourceforge.net>",
+    "Alex <alex@recordsonribs.com>",
+    "Zlatan Vasović <legospace9876@gmail.com>",
+    "Ian Carrico <Ian@FourKitchens.com>",
+    "Danny Garcia <dannygarcia@users.noreply.github.com>",
+    "Kyle Hotchkiss <kyle@kylehotchkiss.com>",
+    "Matthias Thar <matthias.thar@gmail.com>",
+    "Mike Fowler <mike@mikefowler.me>",
+    "Parker Moore <parkrmoore@gmail.com>",
+    "Chris Rebert <github@rebertia.com>",
+    "Chase Adams <chase@realchaseadams.com>",
+    "Bitdeli Chef <chef@bitdeli.com>",
+    "Jens Krause <info@websector.de>"
   ],
   "repository": {
     "type": "git",
