@@ -185,6 +185,12 @@ Type: `boolean`
 
 Skips the initial site build which occurs before the server is started.
 
+#### open_url
+
+Type: `boolean`  
+
+Opens the local URL in your default browser.
+
 #### bundleExec
 
 Type: `boolean`  

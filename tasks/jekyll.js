@@ -40,6 +40,7 @@ module.exports = function (grunt) {
 			'host': '--host',
 			'baseurl': '--baseurl',
 			'skip_initial_build': '--skip-initial-build',
+			'open_url': '--open-url',
 
 			// Deprecated flags
 			'paginate': false,
