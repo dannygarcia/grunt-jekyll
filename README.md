@@ -5,6 +5,8 @@ __Currently seeking someone to maintain this project.__
 [![Build Status](https://travis-ci.org/dannygarcia/grunt-jekyll.svg?branch=master)](https://travis-ci.org/dannygarcia/grunt-jekyll)
 [![Dependency Status](https://david-dm.org/dannygarcia/grunt-jekyll.svg?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll)
 [![devDependency Status](https://david-dm.org/dannygarcia/grunt-jekyll/dev-status.svg?theme=shields.io)](https://david-dm.org/dannygarcia/grunt-jekyll#info=devDependencies)
+[![npm Version](https://img.shields.io/npm/v/grunt-jekyll.svg)](https://www.npmjs.com/package/grunt-jekyll)
+[![npm Downloads](https://img.shields.io/npm/dm/grunt-jekyll.svg)](https://www.npmjs.com/package/grunt-jekyll)
 
 > Compile [Jekyll](http://jekyllrb.com/) sites with [Grunt](http://gruntjs.com/).
 
