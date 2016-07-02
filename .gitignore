@@ -2,3 +2,4 @@
 node_modules/
 test/expected/
 /npm-debug.log
+.jekyll-metadata

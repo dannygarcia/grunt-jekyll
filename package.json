@@ -1,36 +1,63 @@
 {
-	"name": "grunt-jekyll",
-	"description": "A custom grunt.js plugin that executes jekyll compile and/or watch for you",
-	"version": "0.4.2",
-	"homepage": "https://github.com/dannygarcia/grunt-jekyll",
-	"author": "Danny Garcia <contact@danny-garcia.com> (http://danny-garcia.com)",
-	"contributors": ["Rob Wierzbowski <hello@robwierzbowski.com> (http://robwierzbowski.com)"],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/dannygarcia/grunt-jekyll.git"
-	},
-	"bugs": {
-		"url": "https://github.com/dannygarcia/grunt-jekyll/issues"
-	},
-	"license": "MIT",
-	"bin": "bin/grunt-jekyll",
-	"engines": {
-		"node": ">= 0.10.5"
-	},
-	"dependencies": {
-		"tmp": "~0.0.23"
-	},
-	"devDependencies": {
-		"grunt": "~0.4.1",
-		"grunt-contrib-jshint": "~0.10.0",
-		"grunt-mocha-test": "~0.10.0"
-	},
-	"peerDependencies": {
-		"grunt": "~0.4.1"
-	},
-	"scripts" : {
-		"test" : "grunt test"
-	},
-	"keywords": ["jekyll", "gruntplugin"],
-	"files": ["bin", "tasks"]
+  "name": "grunt-jekyll",
+  "description": "A custom grunt.js plugin that executes jekyll compile and/or watch for you",
+  "version": "0.4.4",
+  "homepage": "https://github.com/dannygarcia/grunt-jekyll",
+  "author": "Danny Garcia <contact@danny-garcia.com> (http://danny-garcia.com)",
+  "contributors": [
+    "Rob Wierzbowski <hello@robwierzbowski.com>",
+    "Danny Garcia <contact@danny-garcia.com>",
+    "Tunghsiao Liu <t@sparanoid.com>",
+    "XhmikosR <xhmikosr@users.sourceforge.net>",
+    "Alex <alex@recordsonribs.com>",
+    "Zlatan Vasović <legospace9876@gmail.com>",
+    "Ian Carrico <Ian@FourKitchens.com>",
+    "Danny Garcia <dannygarcia@users.noreply.github.com>",
+    "Kyle Hotchkiss <kyle@kylehotchkiss.com>",
+    "Matthias Thar <matthias.thar@gmail.com>",
+    "Mike Fowler <mike@mikefowler.me>",
+    "Parker Moore <parkrmoore@gmail.com>",
+    "Chris Rebert <github@rebertia.com>",
+    "Chase Adams <chase@realchaseadams.com>",
+    "Bitdeli Chef <chef@bitdeli.com>",
+    "Jens Krause <info@websector.de>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dannygarcia/grunt-jekyll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dannygarcia/grunt-jekyll/issues"
+  },
+  "license": "MIT",
+  "bin": "bin/grunt-jekyll",
+  "engines": {
+    "node": ">= 0.10.5"
+  },
+  "dependencies": {
+    "tmp": "^0.0.28"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bump": "^0.7.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-conventional-changelog": "^6.1.0",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-npm": "0.0.2",
+    "load-grunt-tasks": "^3.4.1"
+  },
+  "peerDependencies": {
+    "grunt": ">=0.4.1"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "jekyll",
+    "gruntplugin"
+  ],
+  "files": [
+    "bin",
+    "tasks"
+  ]
 }
