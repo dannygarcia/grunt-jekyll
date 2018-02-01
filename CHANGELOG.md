@@ -1,3 +1,13 @@
+<a name="0.4.7"></a>
+## [0.4.7](https://github.com/dannygarcia/grunt-jekyll/compare/v0.4.6...v0.4.7) (2018-02-01)
+
+
+### Features
+
+* add new livereload flag ([a482879](https://github.com/dannygarcia/grunt-jekyll/commit/a482879))
+
+
+
 <a name="0.4.6"></a>
 ## [0.4.6](https://github.com/dannygarcia/grunt-jekyll/compare/v0.4.5...v0.4.6) (2017-01-14)
 
