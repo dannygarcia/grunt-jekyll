@@ -21,9 +21,6 @@ module.exports = function (grunt) {
 			'trace': '--trace',
 
 			// Build Command Options
-			'auto': '--watch',
-			'watch': '--watch',
-			'no_watch': '--no-watch',
 			'config': '--config',
 			'drafts': '--drafts',
 			'future': '--future',
@@ -32,16 +29,19 @@ module.exports = function (grunt) {
 			'force_polling': '--force_polling',
 			'verbose': '--verbose',
 			'quiet': '--quiet',
-			'incremental': '--incremental',
-			'livereload': '--livereload',
 
 			// Serve Command Options
+			'auto': '--watch',
+			'watch': '--watch',
+			'no_watch': '--no-watch',
 			'port': '--port',
 			'server_port': '--port',
 			'host': '--host',
 			'baseurl': '--baseurl',
 			'skip_initial_build': '--skip-initial-build',
 			'open_url': '--open-url',
+			'incremental': '--incremental',
+			'livereload': '--livereload',
 
 			// Deprecated flags
 			'paginate': false,
