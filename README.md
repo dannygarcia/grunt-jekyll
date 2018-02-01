@@ -161,6 +161,12 @@ Type: `boolean`
 
 Enable the experimental incremental build feature. Incremental build only re-builds posts and pages that have changed, resulting in significant performance improvements for large sites, but may also break site generation in certain cases.
 
+#### livereload
+
+Type: `boolean`  
+
+LiveReload refreshes your browser after a change.
+
 #### port
 
 Type: `string` or `number`  
