@@ -33,6 +33,7 @@ module.exports = function (grunt) {
 			'verbose': '--verbose',
 			'quiet': '--quiet',
 			'incremental': '--incremental',
+			'livereload': '--livereload',
 
 			// Serve Command Options
 			'port': '--port',
