@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/dannygarcia/grunt-jekyll/compare/v0.4.7...v1.0.0) (2018-10-17)
+
+
+### Features
+
+* minor tweak output ([b50a2d5](https://github.com/dannygarcia/grunt-jekyll/commit/b50a2d5))
+
+
+
 <a name="0.4.7"></a>
 ## [0.4.7](https://github.com/dannygarcia/grunt-jekyll/compare/v0.4.6...v0.4.7) (2018-02-01)
 
