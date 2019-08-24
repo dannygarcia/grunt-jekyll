@@ -1,7 +1,7 @@
 {
   "name": "grunt-jekyll",
   "description": "A custom grunt.js plugin that executes jekyll compile and/or watch for you",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/dannygarcia/grunt-jekyll",
   "author": "Danny Garcia <contact@danny-garcia.com> (http://danny-garcia.com)",
   "contributors": [

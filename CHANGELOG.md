@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/dannygarcia/grunt-jekyll/compare/v1.0.0...v1.0.1) (2019-08-24)
+
+
+### Features
+
+* update deps ([fa36f82](https://github.com/dannygarcia/grunt-jekyll/commit/fa36f82))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/dannygarcia/grunt-jekyll/compare/v0.4.7...v1.0.0) (2018-10-17)
 
