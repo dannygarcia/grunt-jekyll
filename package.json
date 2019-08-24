@@ -38,9 +38,9 @@
     "tmp": "^0.0.33"
   },
   "devDependencies": {
-    "grunt": "^1.0.3",
+    "grunt": "^1.0.4",
     "grunt-bump": "^0.8.0",
-    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
     "grunt-conventional-changelog": "^6.1.0",
     "grunt-mocha-test": "^0.13.3",
     "grunt-npm": "0.0.2",
