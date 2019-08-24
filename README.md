@@ -34,7 +34,7 @@ This task helps you compile your Jekyll static site with Grunt.
 
 #### serve
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Build the site and start a Jekyll development server on `http://localhost:4000`. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
@@ -45,7 +45,7 @@ For complex projects you may want to use [grunt-contrib-connect](https://github.
 
 #### doctor
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
@@ -56,21 +56,21 @@ You can use all of the configuration options available in the [Jekyll Documentat
 
 #### src
 
-Type: `string`  
+Type: `string`
 Default: `.`
 
 Directory where Jekyll will read files.
 
 #### dest
 
-Type: `string`  
+Type: `string`
 Default: `./_site`
 
 Directory where Jekyll will write files.
 
 #### [no_]watch
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Regenerate the site when files are modified.
@@ -78,7 +78,7 @@ If you are running multiple watch tasks in a project you should use [grunt-contr
 
 #### config
 
-Type: `string`  
+Type: `string`
 Default: `_config.yml`
 
 Specify a custom configuration file. Multiple files separated by a comma will cascade right to left.
@@ -91,115 +91,115 @@ Create a temporary \_config.yml with the contents of `raw`. This config file has
 
 #### safe
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Disables custom plugins, and ignore symbolic links.
 
 #### plugins
 
-Type: `string`  
+Type: `string`
 Default: `./_plugins`
 
 Specify a plugins directory.
 
 #### layouts
 
-Type: `string`  
+Type: `string`
 Default: `./_layouts`
 
 Specify a layouts directory.
 
 #### drafts
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Process and render draft posts.
 
 #### future
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Publishes posts with a future date.
 
 #### lsi
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Produce an index for related posts.
 
 #### limit_posts
 
-Type: `number`  
+Type: `number`
 
 Limit the number of posts to parse and publish.
 
 #### force_polling
 
-Type: `boolean`  
+Type: `boolean`
 
 Force watch to use polling.
 
 #### verbose
 
-Type: `boolean`  
+Type: `boolean`
 
 Print verbose output.
 
 #### quiet
 
-Type: `boolean`  
+Type: `boolean`
 
 Silence the normal output from Jekyll during a build.
 
 #### incremental
 
-Type: `boolean`  
+Type: `boolean`
 
 Enable the experimental incremental build feature. Incremental build only re-builds posts and pages that have changed, resulting in significant performance improvements for large sites, but may also break site generation in certain cases.
 
 #### livereload
 
-Type: `boolean`  
+Type: `boolean`
 
 LiveReload refreshes your browser after a change.
 
 #### port
 
-Type: `string` or `number`  
+Type: `string` or `number`
 
 Listen on the given port (requires `serve`).
 
 #### host
 
-Type: `string`  
+Type: `string`
 
 Listen at the given hostname (requires `serve`).
 
 #### baseurl
 
-Type: `string`  
+Type: `string`
 
 Serve the website from the given base URL (requires `serve`).
 
 #### skip_initial_build
 
-Type: `boolean`  
+Type: `boolean`
 
 Skips the initial site build which occurs before the server is started.
 
 #### open_url
 
-Type: `boolean`  
+Type: `boolean`
 
 Opens the local URL in your default browser.
 
 #### bundleExec
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
@@ -264,6 +264,7 @@ grunt.initConfig({
 
 ## Changelog
 
+- See CHANGELOG.md for further updates
 - v0.4.3: More options support for Jekyll 3.0.0
 - v0.4.2: More internal optimizations.
 - v0.4.1: Internal optimizations.
