@@ -32,177 +32,177 @@ This task helps you compile your Jekyll static site with Grunt.
 
 ### Jekyll Subcommands
 
-#### serve
+- serve
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Build the site and start a Jekyll development server on `http://localhost:4000`. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
+  Build the site and start a Jekyll development server on `http://localhost:4000`. The server lasts forever: kill it with <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
-If `serve` is false, the site is built with the `build` command.
+  If `serve` is false, the site is built with the `build` command.
 
-For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) or [grunt-browser-sync](https://github.com/BrowserSync/grunt-browser-sync) instead.
+  For complex projects you may want to use [grunt-contrib-connect](https://github.com/gruntjs/grunt-contrib-connect) or [grunt-browser-sync](https://github.com/BrowserSync/grunt-browser-sync) instead.
 
-#### doctor
+- doctor
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
+  Test your site for common errors and deprecated code. Ignores all other options except `src`, `config`, and `bundleExec`.
 
 ### Options
 
 You can use all of the configuration options available in the [Jekyll Documentation](http://jekyllrb.com/docs/configuration/), as well as some special options provided by this plugin.
 
-#### src
+- src
 
-Type: `string`
-Default: `.`
+  Type: `string`
+  Default: `.`
 
-Directory where Jekyll will read files.
+  Directory where Jekyll will read files.
 
-#### dest
+- dest
 
-Type: `string`
-Default: `./_site`
+  Type: `string`
+  Default: `./_site`
 
-Directory where Jekyll will write files.
+  Directory where Jekyll will write files.
 
-#### [no_]watch
+- [no_]watch
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Regenerate the site when files are modified.
-If you are running multiple watch tasks in a project you should use [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) instead.
+  Regenerate the site when files are modified.
+  If you are running multiple watch tasks in a project you should use [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) instead.
 
-#### config
+- config
 
-Type: `string`
-Default: `_config.yml`
+  Type: `string`
+  Default: `_config.yml`
 
-Specify a custom configuration file. Multiple files separated by a comma will cascade right to left.
+  Specify a custom configuration file. Multiple files separated by a comma will cascade right to left.
 
-#### raw
+- raw
 
-Type: `string`
+  Type: `string`
 
-Create a temporary \_config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
+  Create a temporary \_config.yml with the contents of `raw`. This config file has greater precedence than the files in `config`.
 
-#### safe
+- safe
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Disables custom plugins, and ignore symbolic links.
+  Disables custom plugins, and ignore symbolic links.
 
-#### plugins
+- plugins
 
-Type: `string`
-Default: `./_plugins`
+  Type: `string`
+  Default: `./_plugins`
 
-Specify a plugins directory.
+  Specify a plugins directory.
 
-#### layouts
+- layouts
 
-Type: `string`
-Default: `./_layouts`
+  Type: `string`
+  Default: `./_layouts`
 
-Specify a layouts directory.
+  Specify a layouts directory.
 
-#### drafts
+- drafts
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Process and render draft posts.
+  Process and render draft posts.
 
-#### future
+- future
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Publishes posts with a future date.
+  Publishes posts with a future date.
 
-#### lsi
+- lsi
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Produce an index for related posts.
+  Produce an index for related posts.
 
-#### limit_posts
+- limit_posts
 
-Type: `number`
+  Type: `number`
 
-Limit the number of posts to parse and publish.
+  Limit the number of posts to parse and publish.
 
-#### force_polling
+- force_polling
 
-Type: `boolean`
+  Type: `boolean`
 
-Force watch to use polling.
+  Force watch to use polling.
 
-#### verbose
+- verbose
 
-Type: `boolean`
+  Type: `boolean`
 
-Print verbose output.
+  Print verbose output.
 
-#### quiet
+- quiet
 
-Type: `boolean`
+  Type: `boolean`
 
-Silence the normal output from Jekyll during a build.
+  Silence the normal output from Jekyll during a build.
 
-#### incremental
+- incremental
 
-Type: `boolean`
+  Type: `boolean`
 
-Enable the experimental incremental build feature. Incremental build only re-builds posts and pages that have changed, resulting in significant performance improvements for large sites, but may also break site generation in certain cases.
+  Enable the experimental incremental build feature. Incremental build only re-builds posts and pages that have changed, resulting in significant performance improvements for large sites, but may also break site generation in certain cases.
 
-#### livereload
+- livereload
 
-Type: `boolean`
+  Type: `boolean`
 
-LiveReload refreshes your browser after a change.
+  LiveReload refreshes your browser after a change.
 
-#### port
+- port
 
-Type: `string` or `number`
+  Type: `string` or `number`
 
-Listen on the given port (requires `serve`).
+  Listen on the given port (requires `serve`).
 
-#### host
+- host
 
-Type: `string`
+  Type: `string`
 
-Listen at the given hostname (requires `serve`).
+  Listen at the given hostname (requires `serve`).
 
-#### baseurl
+- baseurl
 
-Type: `string`
+  Type: `string`
 
-Serve the website from the given base URL (requires `serve`).
+  Serve the website from the given base URL (requires `serve`).
 
-#### skip_initial_build
+- skip_initial_build
 
-Type: `boolean`
+  Type: `boolean`
 
-Skips the initial site build which occurs before the server is started.
+  Skips the initial site build which occurs before the server is started.
 
-#### open_url
+- open_url
 
-Type: `boolean`
+  Type: `boolean`
 
-Opens the local URL in your default browser.
+  Opens the local URL in your default browser.
 
-#### bundleExec
+- bundleExec
 
-Type: `boolean`
-Default: `false`
+  Type: `boolean`
+  Default: `false`
 
-Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
+  Run `jekyll` with [bundle exec](http://gembundler.com/v1.3/man/bundle-exec.1.html).
 
 ## Usage examples
 
